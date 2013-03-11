@@ -1,0 +1,11 @@
+{
+    "name": "mattketmo/email-checker",
+    "description": "Throwaway email detection library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthieu Moquet",
+            "email": "matthieu@moquet.net"
+        }
+    ]
+}
