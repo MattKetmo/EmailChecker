@@ -36,6 +36,6 @@ class EmailChecker
 
         list($local, $domain) = Utilities::parseEmailAddress($email);
 
-        return $this->adapter->isDomainThrowable($domain);
+        return $this->adapter->isThroawayDomain($domain);
     }
 }
