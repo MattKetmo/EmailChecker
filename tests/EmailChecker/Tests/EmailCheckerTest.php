@@ -6,24 +6,24 @@ use EmailChecker\EmailChecker;
 
 class EmailCheckerTest extends TestCase
 {
-    public function testAdapterIsValid()
+    public function testEmailIsValid()
     {
         $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
         $adapter->expects($this->any())
              ->method('isThroawayDomain')
-             ->will($this->returnValue(true));
+             ->will($this->returnValue(false));
 
         $checker = new EmailChecker($adapter);
 
         $this->assertTrue($checker->isValid('foo@bar.org'));
     }
 
-    public function testAdapterIsNotValid()
+    public function testEmailIsNotValid()
     {
         $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
         $adapter->expects($this->any())
              ->method('isThroawayDomain')
-             ->will($this->returnValue(false));
+             ->will($this->returnValue(true));
 
         $checker = new EmailChecker($adapter);
 
