@@ -22,13 +22,13 @@ class EmailChecker
     }
 
     /**
-     * Check if it's not a throwaway email.
+     * Check if it's a valid email, ie. not a throwaway email.
      *
      * @param  string  $email The email to check
      *
      * @return boolean true for a throwaway email
      */
-    public function isThrowaway($email)
+    public function isValid($email)
     {
         if (false === $email = filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return false;
