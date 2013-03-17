@@ -29,7 +29,6 @@ class Utilities
             throw new InvalidEmailException(sprintf('"%s" is not a valid email', $email));
         }
 
-        return array($parts['local'], $parts['domain'],
-        );
+        return array($parts['local'], $parts['domain']);
     }
 }

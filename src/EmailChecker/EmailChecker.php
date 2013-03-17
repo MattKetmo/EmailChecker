@@ -3,6 +3,7 @@
 namespace EmailChecker;
 
 use EmailChecker\Adapter\AdapterInterface;
+use EmailChecker\Exception\InvalidEmailException;
 
 /**
  * Checks throwaway email.
@@ -34,7 +35,11 @@ class EmailChecker
             return false;
         }
 
-        list($local, $domain) = Utilities::parseEmailAddress($email);
+        try {
+            list($local, $domain) = Utilities::parseEmailAddress($email);
+        } catch (InvalidEmailException $e) {
+            return false;
+        }
 
         return !$this->adapter->isThroawayDomain($domain);
     }
