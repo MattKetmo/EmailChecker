@@ -17,17 +17,6 @@
 75hosting.com
 75hosting.net
 75hosting.org
-BeefMilk.com
-DingBone.com
-E4ward.com
-FudgeRub.com
-GishPuppy.com
-LookUgly.com
-MailEater.com
-MintEmail.com
-SmellFear.com
-Sneakemail.com
-TempEMail.net
 ajaxapp.net
 amilegit.com
 amiri.net
@@ -58,6 +47,7 @@ dayrep.com
 deadaddress.com
 despam.it
 devnullmail.com
+dingbone.com
 discardmail.com
 discardmail.de
 disposeamail.com
@@ -73,6 +63,7 @@ dump-email.info
 dumpyemail.com
 e-mail.com
 e4ward.com
+easytrashmail.com
 email.net
 email60.com
 emailias.com
@@ -93,6 +84,7 @@ filzmail.com
 fizmail.com
 fr33mail.info
 front14.org
+fudgerub.com
 get1mail.com
 get2mail.fr
 getairmail.com
@@ -122,6 +114,7 @@ ieatspam.eu
 ieatspam.info
 imails.info
 inbox2.info
+inboxalias.com
 incognitomail.com
 incognitomail.net
 incognitomail.org
@@ -138,6 +131,7 @@ keepmymail.com
 killmail.net
 kir.ch.tc
 klzlk.com
+koszmail.pl
 kulturbetrieb.info
 lhsdv.com
 link2mail.net
