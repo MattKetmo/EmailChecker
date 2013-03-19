@@ -8,6 +8,12 @@
             "email": "matthieu@moquet.net"
         }
     ],
+    "require-dev": {
+        "symfony/validator": "~2.2"
+    },
+    "suggest": {
+        "symfony/validator": "Add validation constraints"
+    },
     "autoload": {
         "psr-0": {
             "EmailChecker": "src"
