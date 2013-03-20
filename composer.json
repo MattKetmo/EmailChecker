@@ -2,6 +2,7 @@
     "name": "mattketmo/email-checker",
     "description": "Throwaway email detection library",
     "license": "MIT",
+    "keywords": ["email", "check", "throwaway", "disposable"],
     "authors": [
         {
             "name": "Matthieu Moquet",
