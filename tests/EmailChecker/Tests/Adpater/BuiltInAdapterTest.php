@@ -19,7 +19,7 @@ class BuiltInAdapterTest extends TestCase
      */
     public function testThrowawayDomains($domain)
     {
-        $this->assertTrue($this->adapter->isThroawayDomain($domain));
+        $this->assertTrue($this->adapter->isThrowawayDomain($domain));
     }
 
     public static function throwawayDomains()

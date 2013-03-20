@@ -19,7 +19,7 @@ class FileAdapterTest extends TestCase
      */
     public function testThrowawayDomains($domain)
     {
-        $this->assertTrue($this->adapter->isThroawayDomain($domain));
+        $this->assertTrue($this->adapter->isThrowawayDomain($domain));
     }
 
     /**
@@ -27,7 +27,7 @@ class FileAdapterTest extends TestCase
      */
     public function testNotThrowawayDomains($domain)
     {
-        $this->assertFalse($this->adapter->isThroawayDomain($domain));
+        $this->assertFalse($this->adapter->isThrowawayDomain($domain));
     }
 
     public static function throwawayDomains()

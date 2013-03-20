@@ -41,6 +41,6 @@ class EmailChecker
             return false;
         }
 
-        return !$this->adapter->isThroawayDomain($domain);
+        return !$this->adapter->isThrowawayDomain($domain);
     }
 }

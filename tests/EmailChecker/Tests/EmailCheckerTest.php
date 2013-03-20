@@ -10,7 +10,7 @@ class EmailCheckerTest extends TestCase
     {
         $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
         $adapter->expects($this->any())
-             ->method('isThroawayDomain')
+             ->method('isThrowawayDomain')
              ->will($this->returnValue(false));
 
         $checker = new EmailChecker($adapter);
@@ -22,7 +22,7 @@ class EmailCheckerTest extends TestCase
     {
         $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
         $adapter->expects($this->any())
-             ->method('isThroawayDomain')
+             ->method('isThrowawayDomain')
              ->will($this->returnValue(true));
 
         $checker = new EmailChecker($adapter);

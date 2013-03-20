@@ -22,7 +22,7 @@ class ArrayAdapter implements AdapterInterface
     /**
      * {@ineritDoc}
      */
-    public function isThroawayDomain($domain)
+    public function isThrowawayDomain($domain)
     {
         return in_array($domain, $this->domains);
     }
