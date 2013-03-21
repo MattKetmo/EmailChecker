@@ -10,7 +10,7 @@
         }
     ],
     "require-dev": {
-        "symfony/validator": "~2.2"
+        "symfony/validator": "~2.1"
     },
     "suggest": {
         "symfony/validator": "Add validation constraints"
