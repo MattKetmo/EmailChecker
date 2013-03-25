@@ -3,6 +3,7 @@
 namespace EmailChecker;
 
 use EmailChecker\Adapter\AdapterInterface;
+use EmailChecker\Adapter\BuiltInAdapter;
 use EmailChecker\Exception\InvalidEmailException;
 
 /**
@@ -17,9 +18,9 @@ class EmailChecker
     /**
      * @param AdapterInterface $adapter Checker adapter
      */
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(AdapterInterface $adapter = null)
     {
-        $this->adapter = $adapter;
+        $this->adapter = $adapter ?: new BuiltInAdapter();
     }
 
     /**
