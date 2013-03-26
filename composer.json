@@ -10,10 +10,12 @@
         }
     ],
     "require-dev": {
-        "symfony/validator": "~2.1"
+        "symfony/validator": "~2.1",
+        "knplabs/gaufrette": "~0.1"
     },
     "suggest": {
-        "symfony/validator": "Add validation constraints"
+        "symfony/validator": "Add validation constraints",
+        "knplabs/gaufrette": "Use filesystem abstraction layer to read data"
     },
     "autoload": {
         "psr-0": {
