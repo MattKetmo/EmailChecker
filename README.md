@@ -15,7 +15,7 @@ but you can also use your own data.
 Via [Composer](http://getcomposer.org/):
 
 ```
-composer require "mattketmo/email-checker:dev-master"
+composer require "mattketmo/email-checker:~0.1"
 ```
 
 ## Usage
