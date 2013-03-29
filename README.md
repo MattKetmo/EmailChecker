@@ -32,7 +32,7 @@ $checker->isValid('foo@bar.org');     // true
 $checker->isValid('foo@yopmail.com'); // false
 ```
 
-Or using your another adapter:
+Or using another adapter:
 
 ```php
 <?php
