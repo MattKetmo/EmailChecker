@@ -5,7 +5,7 @@
 PHP library to check if an email comes from a **disposable email provider**.
 
 To detect invalid emails, it provides a built-in database of
-[300+ disposable email providers](res/throwaway_domains.txt),
+[450+ disposable email providers](res/throwaway_domains.txt),
 but you can also use your own data.
 
 Note: this library is inspired from [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker),
