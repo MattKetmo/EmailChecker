@@ -39,7 +39,7 @@ class EmailCheckerTest extends TestCase
         $this->assertFalse($checker->isValid('foo@bar.org'));
     }
 
-    public function testInvalidEmail()
+    public function testMalformattedEmail()
     {
         $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
         $checker = new EmailChecker($adapter);

@@ -51,6 +51,8 @@ class UtilitiesTest extends TestCase
     {
         return array(
             array('foo[at]bar.org'),
+            array('foo@foo@bar.org'),
+            array('foobar.org'),
         );
     }
 }

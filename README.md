@@ -48,3 +48,7 @@ $checker = new EmailChecker(new Adapter\ArrayAdapter(array(
 $checker->isValid('foo@bar.org'); // true
 $checker->isValid('foo@baz.net'); // false
 ```
+
+## License
+
+EmailChecker is licensed under the MIT License — see the LICENSE file for details
