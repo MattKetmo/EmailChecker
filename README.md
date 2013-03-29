@@ -49,6 +49,25 @@ $checker->isValid('foo@bar.org'); // true
 $checker->isValid('foo@baz.net'); // false
 ```
 
+## Integration with Symfony2
+
+This library also provides a constraint validation for your Symfony2 project:
+
+```php
+
+use EmailChecker\Constraints as EmailCheckerAssert;
+use Symfony\Component\Validator\Constraints as Assert;
+
+class User
+{
+    /**
+     * @Assert\NotBlank
+     * @EmailCheckerAssert\NotThrowawayEmail
+     */
+    protected $email;
+}
+```
+
 ## License
 
 EmailChecker is licensed under the MIT License — see the LICENSE file for details
