@@ -50,6 +50,7 @@ class GaufretteAdapterTest extends TestCase
         return array(
             array('jetable.org'),
             array('mailjet.org'),
+            array('dummy-space.ext'),
         );
     }
 
@@ -58,6 +59,7 @@ class GaufretteAdapterTest extends TestCase
         return array(
             array('gmail.com'),
             array('hotmail.com'),
+            array('comment.ext'),
         );
     }
 }
