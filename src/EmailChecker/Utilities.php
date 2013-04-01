@@ -38,6 +38,30 @@ class Utilities
             throw new InvalidEmailException(sprintf('"%s" is not a valid email', $email));
         }
 
-        return array($parts['local'], $parts['domain']);
+        return array_map('strtolower', array($parts['local'], $parts['domain']));
+    }
+
+    /**
+     * Parse content and extract lines.
+     *
+     * @param  string $content The content to parse
+     *
+     * @return array Array of cleaned string
+     */
+    static public function parseLines($content)
+    {
+        // Split by line
+        $lines = explode(PHP_EOL, $content);
+
+        // Trim and convert to lowercase
+        $lines = array_map('trim', $lines);
+        $lines = array_map('strtolower', $lines);
+
+        // Remove empty lines and comments
+        $lines = array_filter($lines, function($line) {
+            return (0 === strlen($line) || '#' === $line[0]) ? false : $line;
+        });
+
+        return $lines;
     }
 }

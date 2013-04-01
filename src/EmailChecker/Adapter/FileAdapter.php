@@ -11,6 +11,8 @@
 
 namespace EmailChecker\Adapter;
 
+use EmailChecker\Utilities;
+
 /**
  * Throwaway email adapter build with file.
  *
@@ -29,13 +31,7 @@ class FileAdapter implements AdapterInterface
             throw new \InvalidArgumentException(sprintf('File "%s" not found', $filename));
         }
 
-        $lines = explode(PHP_EOL, file_get_contents($filename));
-        $lines = array_map('trim', $lines);
-        $lines = array_filter($lines, function($line) {
-            return (0 === strlen($line) || '#' === $line[0]) ? false : $line;
-        });
-
-        $this->domains = $lines;
+        $this->domains = Utilities::parseLines(file_get_contents($filename));
     }
 
     /**

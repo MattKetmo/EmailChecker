@@ -51,6 +51,7 @@ class GaufretteAdapterTest extends TestCase
             array('jetable.org'),
             array('mailjet.org'),
             array('dummy-space.ext'),
+            array('yopmail.com'),
         );
     }
 

@@ -12,6 +12,7 @@
 namespace EmailChecker\Adapter;
 
 use Gaufrette\File;
+use EmailChecker\Utilities;
 
 /**
  * Adapter for Gaufrette filesystem abstraction layer.
@@ -27,13 +28,7 @@ class GaufretteAdapter implements AdapterInterface
      */
     public function __construct(File $file)
     {
-        $lines = explode(PHP_EOL, $file->getContent());
-        $lines = array_map('trim', $lines);
-        $lines = array_filter($lines, function($line) {
-            return (0 === strlen($line) || '#' === $line[0]) ? false : $line;
-        });
-
-        $this->domains = $lines;
+        $this->domains = Utilities::parseLines($file->getContent());
     }
 
     /**
