@@ -39,6 +39,35 @@ class UtilitiesTest extends TestCase
         }
     }
 
+    public function testParseLines()
+    {
+        $content = <<<TEXT
+# This is a comment and should be parsed
+Uppercase
+foo
+   bar
+#baz
+TEXT;
+
+        $parsedContent = Utilities::parseLines($content);
+        $expectedLines = array(
+            'uppercase',
+            'foo',
+            'bar',
+        );
+
+        $diffs = array_diff($expectedLines, $parsedContent);
+
+        $message = <<<MSG
+Failed asserting that parsed content equals expected lines.
+Expected:
+%s
+Actual:
+%s
+MSG;
+        $this->assertEmpty($diffs, sprintf($message, print_r($expectedLines, true), print_r($parsedContent, true)));
+    }
+
     public static function validEmails()
     {
         return array(
