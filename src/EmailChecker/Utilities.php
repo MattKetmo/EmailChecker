@@ -51,7 +51,7 @@ class Utilities
     static public function parseLines($content)
     {
         // Split by line
-        $lines = explode(PHP_EOL, $content);
+        $lines = explode("\n", $content);
 
         // Trim and convert to lowercase
         $lines = array_map('trim', $lines);
