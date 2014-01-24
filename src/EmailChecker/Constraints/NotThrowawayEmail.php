@@ -15,6 +15,7 @@ use Symfony\Component\Validator\Constraint;
 
 /**
  * @author Matthieu Moquet <matthieu@moquet.net>
+ * @Annotation
  */
 class NotThrowawayEmail extends Constraint
 {
