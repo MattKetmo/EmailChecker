@@ -34,6 +34,7 @@ anonymbox.com
 antichef.com
 antichef.net
 antispam.de
+armyspy.com
 atvclub.msk.ru
 baxomale.ht.cx
 beefmilk.com
@@ -58,6 +59,7 @@ courrieltemporaire.com
 cubiclink.com
 curryworld.de
 cust.in
+cuvox.de
 dacoolest.com
 dandikmail.com
 dayrep.com
@@ -85,6 +87,7 @@ dumpyemail.com
 e-mail.com
 e4ward.com
 easytrashmail.com
+einrot.com
 email.net
 email60.com
 emailias.com
@@ -108,6 +111,7 @@ fastacura.com
 filzmail.com
 fixmail.tk
 fizmail.com
+fleckens.hu
 fr33mail.info
 frapmail.com
 front14.org
@@ -145,6 +149,7 @@ guerrillamail.de
 guerrillamail.net
 guerrillamail.org
 guerrillamailblock.com
+gustr.com
 h.mintemail.com
 haltospam.com
 hidzz.com
@@ -171,6 +176,7 @@ jetable.fr.nf
 jetable.net
 jetable.org
 jnxjn.com
+jourrapide.com
 junk1e.com
 kasmail.com
 kaspop.com
@@ -292,6 +298,7 @@ recode.me
 recursor.net
 regbypass.com
 regbypass.comsafe-mail.net
+rhyta.com
 rklips.com
 rmqkr.net
 rppkn.com
@@ -375,9 +382,11 @@ spamtrail.com
 speed.1s.fr
 supergreatmail.com
 supermailer.jp
+superrito.com
 suremail.info
 teewars.org
 teleworm.com
+teleworm.us
 tempalias.com
 tempe-mail.com
 tempemail.biz
