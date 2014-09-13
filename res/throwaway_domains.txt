@@ -368,7 +368,6 @@ privymail.de
 proxymail.eu
 prtnx.com
 punkass.com
-PutThisInYourSpamDatabase.com
 putthisinyourspamdatabase.com
 qq.com
 quickinbox.com
@@ -393,7 +392,6 @@ sandelf.de
 saynotospams.com
 selfdestructingmail.com
 selfdestructingmail.org
-SendSpamHere.com
 sendspamhere.com
 sharklasers.com
 shieldedmail.com
@@ -456,9 +454,7 @@ spamgoes.in
 spamgourmet.com
 spamgourmet.net
 spamgourmet.org
-SpamHereLots.com
 spamherelots.com
-SpamHerePlease.com
 spamhereplease.com
 spamhole.com
 spamify.com
@@ -488,7 +484,6 @@ tempalias.com
 tempe-mail.com
 tempemail.biz
 tempemail.com
-TempEMail.net
 tempemail.net
 tempinbox.co.uk
 tempinbox.com
