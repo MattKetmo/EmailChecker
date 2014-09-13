@@ -1,22 +1,24 @@
 # EmailChecker
 
-[![Build Status](https://secure.travis-ci.org/MattKetmo/EmailChecker.png)](http://travis-ci.org/MattKetmo/EmailChecker)
+[![Build status...](https://img.shields.io/travis/MattKetmo/EmailChecker.svg?style=flat)](http://travis-ci.org/MattKetmo/EmailChecker)
+[![License MIT](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/MattKetmo/EmailChecker/blob/master/LICENSE)
+[![Packagist](http://img.shields.io/github/tag/MattKetmo/EmailChecker.svg?style=flat)](https://packagist.org/packages/mattketmo/email-checker)
 
 PHP library to check if an email comes from a **disposable email provider**.
 
-To detect invalid emails, it provides a built-in database of
-[450+ disposable email providers](res/throwaway_domains.txt),
+To detect invalid emails, it provides a **built-in database** of
+[550+ disposable email providers](res/throwaway_domains.txt),
 but you can also use your own data.
 
-Note: this library is inspired from [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker),
-except it only focuses on PHP (and [integration with Symfony](#integration-with-symfony2)).
+*Note: this library is inspired from [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker),
+except it only focuses on PHP (and [integration with Symfony](#integration-with-symfony2)).*
 
 ## Installation
 
 Via [Composer](http://getcomposer.org/):
 
 ```
-composer require "mattketmo/email-checker:~0.1"
+composer require "mattketmo/email-checker:~1.0"
 ```
 
 ## Usage
@@ -77,4 +79,5 @@ class User
 
 ## License
 
-EmailChecker is licensed under the MIT License — see the LICENSE file for details
+EmailChecker is released under the MIT License.
+See the [bundled LICENSE file](LICENSE) for details.
