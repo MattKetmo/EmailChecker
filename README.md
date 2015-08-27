@@ -8,18 +8,15 @@
 PHP library to check if an email comes from a **disposable email provider**.
 
 To detect invalid emails, it provides a **built-in database** of
-[550+ disposable email providers](res/throwaway_domains.txt),
+[600+ disposable email providers](res/throwaway_domains.txt),
 but you can also use your own data.
-
-*Note: this library is inspired from [FGRibreau/mailchecker](https://github.com/FGRibreau/mailchecker),
-except it only focuses on PHP (and [integration with Symfony](#integration-with-symfony2)).*
 
 ## Installation
 
 Via [Composer](http://getcomposer.org/):
 
 ```
-composer require "mattketmo/email-checker:~1.0"
+composer require mattketmo/email-checker
 ```
 
 ## Usage
@@ -39,7 +36,7 @@ $checker->isValid('foo@bar.org');     // true
 $checker->isValid('foo@yopmail.com'); // false
 ```
 
-Or using another adapter:
+Or using a custom adapter:
 
 ```php
 <?php
@@ -64,6 +61,7 @@ the [AdapterInterface](src/EmailChecker/Adapter/AdapterInterface.php).
 This library also provides a constraint validation for your Symfony2 project:
 
 ```php
+<?php
 
 use EmailChecker\Constraints as EmailCheckerAssert;
 use Symfony\Component\Validator\Constraints as Assert;

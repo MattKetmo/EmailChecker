@@ -1,18 +1,18 @@
 <?php
 
 /*
- * This file is part of EmailChecker.
+ * This file is part of the EmailChecker package.
  *
  * (c) Matthieu Moquet <matthieu@moquet.net>
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace EmailChecker\Constraints;
 
-use EmailChecker\EmailChecker;
 use EmailChecker\Adapter\BuiltInAdapter;
+use EmailChecker\EmailChecker;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -33,7 +33,7 @@ class NotThrowawayEmailValidator extends ConstraintValidator
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function validate($value, Constraint $constraint)
     {

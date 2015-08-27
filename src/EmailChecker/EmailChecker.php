@@ -1,12 +1,12 @@
 <?php
 
 /*
- * This file is part of EmailChecker.
+ * This file is part of the EmailChecker package.
  *
  * (c) Matthieu Moquet <matthieu@moquet.net>
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace EmailChecker;
@@ -35,9 +35,9 @@ class EmailChecker
     /**
      * Check if it's a valid email, ie. not a throwaway email.
      *
-     * @param  string  $email The email to check
+     * @param string $email The email to check
      *
-     * @return boolean true for a throwaway email
+     * @return bool true for a throwaway email
      */
     public function isValid($email)
     {

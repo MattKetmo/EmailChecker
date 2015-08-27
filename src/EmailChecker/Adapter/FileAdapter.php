@@ -1,12 +1,12 @@
 <?php
 
 /*
- * This file is part of EmailChecker.
+ * This file is part of the EmailChecker package.
  *
  * (c) Matthieu Moquet <matthieu@moquet.net>
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace EmailChecker\Adapter;
@@ -23,7 +23,7 @@ class FileAdapter implements AdapterInterface
     protected $domains;
 
     /**
-     * @param array $domains List of throwaway domains
+     * @param string $filename Filename containing all domains
      */
     public function __construct($filename)
     {
@@ -35,7 +35,7 @@ class FileAdapter implements AdapterInterface
     }
 
     /**
-     * {@ineritDoc}
+     * {@inheritdoc}
      */
     public function isThrowawayDomain($domain)
     {

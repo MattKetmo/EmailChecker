@@ -1,18 +1,18 @@
 <?php
 
 /*
- * This file is part of EmailChecker.
+ * This file is part of the EmailChecker package.
  *
  * (c) Matthieu Moquet <matthieu@moquet.net>
  *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace EmailChecker\Adapter;
 
-use Gaufrette\File;
 use EmailChecker\Utilities;
+use Gaufrette\File;
 
 /**
  * Adapter for Gaufrette filesystem abstraction layer.
@@ -32,7 +32,7 @@ class GaufretteAdapter implements AdapterInterface
     }
 
     /**
-     * {@ineritDoc}
+     * {@inheritdoc}
      */
     public function isThrowawayDomain($domain)
     {
