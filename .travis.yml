@@ -9,5 +9,8 @@ php:
 before_install:
     - composer self-update
 
+install:
+    - composer install --prefer-dist --no-progress --no-interaction
+
 script:
     - composer test
