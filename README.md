@@ -76,6 +76,17 @@ class User
 }
 ```
 
+## List of some disposable emails database
+
+- http://10minutemail.com
+- http://spamdecoy.net
+- http://torvpn.com/temporaryemail.html
+- http://www.bloggingwv.com/big-list-of-disposable-temporary-email-services/
+- http://www.fakemailgenerator.com/
+- http://www.warriorforum.com/main-internet-marketing-discussion-forum/147524-list-temporary-email-services-you-may-want-block-your-autoresponder-little-rant.html
+- http://www.yopmail.com
+- http://xenforo.com/community/threads/ban-temporary-email-addresses.5461/
+
 ## License
 
 EmailChecker is released under the MIT License.
