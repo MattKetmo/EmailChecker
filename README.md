@@ -1,9 +1,10 @@
 # EmailChecker
 
-[![Build status...](https://img.shields.io/travis/MattKetmo/EmailChecker.svg?style=flat)](http://travis-ci.org/MattKetmo/EmailChecker)
-[![Code quality...](https://img.shields.io/scrutinizer/g/MattKetmo/EmailChecker.svg?style=flat)](https://scrutinizer-ci.com/g/MattKetmo/EmailChecker/)
-[![License MIT](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/MattKetmo/EmailChecker/blob/master/LICENSE)
-[![Packagist](http://img.shields.io/packagist/v/mattketmo/email-checker.svg?style=flat)](https://packagist.org/packages/mattketmo/email-checker)
+[![Build status...](https://img.shields.io/travis/MattKetmo/EmailChecker.svg)](http://travis-ci.org/MattKetmo/EmailChecker)
+[![Code quality...](https://img.shields.io/scrutinizer/g/MattKetmo/EmailChecker.svg)](https://scrutinizer-ci.com/g/MattKetmo/EmailChecker/)
+[![Downloads](https://img.shields.io/packagist/dt/mattketmo/email-checker.svg)](https://packagist.org/packages/mattketmo/email-checker)
+[![Packagist](http://img.shields.io/packagist/v/mattketmo/email-checker.svg)](https://packagist.org/packages/mattketmo/email-checker)
+[![License MIT](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MattKetmo/EmailChecker/blob/master/LICENSE)
 
 PHP library to check if an email comes from a **disposable email provider**.
 
