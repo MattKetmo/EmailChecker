@@ -8,7 +8,7 @@
 PHP library to check if an email comes from a **disposable email provider**.
 
 To detect invalid emails, it provides a **built-in database** of
-[600+ disposable email providers](res/throwaway_domains.txt),
+[1000+ disposable email providers](res/throwaway_domains.txt),
 but you can also use your own data.
 
 ## Installation
@@ -84,7 +84,6 @@ class User
 - http://www.bloggingwv.com/big-list-of-disposable-temporary-email-services/
 - http://www.fakemailgenerator.com/
 - http://www.warriorforum.com/main-internet-marketing-discussion-forum/147524-list-temporary-email-services-you-may-want-block-your-autoresponder-little-rant.html
-- http://www.yopmail.com
 - http://xenforo.com/community/threads/ban-temporary-email-addresses.5461/
 
 ## License
