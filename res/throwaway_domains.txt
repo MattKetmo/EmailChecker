@@ -776,6 +776,7 @@ onlatedotcom.info
 online.ms
 oopi.org
 opayq.com
+opentrash.com
 ordinaryamerican.net
 otherinbox.com
 ourklips.com
@@ -818,6 +819,7 @@ quickinbox.com
 quickmail.nl
 rcpt.at
 rcs.gaggle.net
+re-gister.com
 reallymymail.com
 realtyalerts.ca
 receiveee.com
@@ -1056,6 +1058,7 @@ trash-mail.ga
 trash-mail.gq
 trash-mail.ml
 trash-mail.tk
+trash-me.com
 trash2009.com
 trash2010.com
 trash2011.com
