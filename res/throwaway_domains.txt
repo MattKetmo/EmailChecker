@@ -74,11 +74,6 @@
 99experts.com
 9mail.cf
 9ox.net
-putthisinyourspamdatabase.com
-sendspamhere.com
-spamherelots.com
-spamhereplease.com
-tempemail.net
 a-bc.net
 a.mailcker.com
 a.vztc.com
@@ -245,7 +240,6 @@ disposemail.com
 dispostable.com
 divermail.com
 dm.w3internet.co.uk
-dm.w3internet.co.uk
 dodgeit.com
 dodgit.com
 dodgit.org
@@ -341,6 +335,7 @@ facebook-email.ga
 facebook-email.ml
 facebookmail.gq
 facebookmail.ml
+fake-box.com
 fake-mail.cf
 fake-mail.ga
 fake-mail.ml
@@ -1203,7 +1198,3 @@ zoemail.com
 zoemail.net
 zoemail.org
 zomg.info
-fake-box.com
-re-gister.com
-trash-me.com
-opentrash.com
