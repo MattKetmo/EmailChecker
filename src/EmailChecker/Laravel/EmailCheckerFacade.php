@@ -13,6 +13,11 @@ namespace EmailChecker\Laravel;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * Laravel Facade accessor.
+ *
+ * @author Oliver Green <dubious@codeblog.co.uk>
+ */
 class EmailCheckerFacade extends Facade
 {
     /**

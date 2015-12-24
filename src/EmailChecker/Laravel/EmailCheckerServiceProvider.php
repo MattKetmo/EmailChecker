@@ -15,6 +15,11 @@ use Validator;
 use EmailChecker\EmailChecker;
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Laravel service provider.
+ *
+ * @author Oliver Green <dubious@codeblog.co.uk>
+ */
 class EmailCheckerServiceProvider extends ServiceProvider
 {
     /**
