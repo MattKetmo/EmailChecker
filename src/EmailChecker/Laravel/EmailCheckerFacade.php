@@ -13,13 +13,15 @@ namespace EmailChecker\Laravel;
 
 use Illuminate\Support\Facades\Facade;
 
-class EmailCheckerFacade extends Facade {
-
+class EmailCheckerFacade extends Facade
+{
     /**
      * Get the registered name of the component.
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'email.checker'; }
-
+    protected static function getFacadeAccessor()
+    {
+        return 'email.checker';
+    }
 }

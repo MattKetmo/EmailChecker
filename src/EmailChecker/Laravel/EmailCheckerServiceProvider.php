@@ -25,15 +25,13 @@ class EmailCheckerServiceProvider extends ServiceProvider
 
     /**
      * Register the factory in the application container.
-     *
-     * @return void
      */
     public function register()
     {
         /*
          * Register the e-mail checker
          */
-        $this->app->singleton(EmailChecker::class, function($app) {
+        $this->app->singleton(EmailChecker::class, function ($app) {
             return new EmailChecker();
         });
 
@@ -52,7 +50,6 @@ class EmailCheckerServiceProvider extends ServiceProvider
             return $checker->isValid($value);
         }, 'The :attribute domain is invalid.');
     }
-
 
     public function provides()
     {
