@@ -40,7 +40,7 @@ class EmailCheckerServiceProvider extends ServiceProvider
         /*
          * Alias the dependency for ease.
          */
-        $this->app->alias(EmailChecker::class, 'mail.checker');
+        $this->app->alias(EmailChecker::class, 'email.checker');
     }
 
     public function boot(EmailChecker $checker)
@@ -56,6 +56,6 @@ class EmailCheckerServiceProvider extends ServiceProvider
 
     public function provides()
     {
-        return ['mail.checker', EmailChecker::class];
+        return ['email.checker', EmailChecker::class];
     }
 }

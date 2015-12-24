@@ -20,6 +20,6 @@ class EmailCheckerFacade extends Facade {
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'mail.checker'; }
+    protected static function getFacadeAccessor() { return 'email.checker'; }
 
 }
