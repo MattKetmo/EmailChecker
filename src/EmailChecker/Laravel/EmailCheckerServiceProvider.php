@@ -45,7 +45,12 @@ class EmailCheckerServiceProvider extends ServiceProvider
 
     public function boot(EmailChecker $checker)
     {
-        //
+        /*
+         * Add a custom validator filter.
+         */
+        \Validator::extend('not_throw_away', function ($attribute, $value, $parameters, $validator) use ($checker) {
+            return $checker->isValid($value);
+        }, 'The :attribute domain is invalid.');
     }
 
 
