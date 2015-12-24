@@ -11,6 +11,7 @@
 
 namespace EmailChecker\Laravel;
 
+use Validator;
 use EmailChecker\EmailChecker;
 use Illuminate\Support\ServiceProvider;
 
@@ -41,16 +42,24 @@ class EmailCheckerServiceProvider extends ServiceProvider
         $this->app->alias(EmailChecker::class, 'email.checker');
     }
 
+    /**
+     * Bootstrap any application services.
+     */
     public function boot(EmailChecker $checker)
     {
         /*
          * Add a custom validator filter.
          */
-        \Validator::extend('not_throw_away', function ($attribute, $value, $parameters, $validator) use ($checker) {
+        Validator::extend('not_throw_away', function ($attribute, $value, $parameters, $validator) use ($checker) {
             return $checker->isValid($value);
         }, 'The :attribute domain is invalid.');
     }
 
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
     public function provides()
     {
         return ['email.checker', EmailChecker::class];
