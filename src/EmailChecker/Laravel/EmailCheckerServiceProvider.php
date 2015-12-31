@@ -11,9 +11,9 @@
 
 namespace EmailChecker\Laravel;
 
-use Validator;
 use EmailChecker\EmailChecker;
 use Illuminate\Support\ServiceProvider;
+use Validator;
 
 /**
  * Laravel service provider.
@@ -71,6 +71,6 @@ class EmailCheckerServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['email.checker', EmailChecker::class];
+        return array('email.checker', EmailChecker::class);
     }
 }
