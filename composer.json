@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": "^5.3.3 || ^7.0"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "^1.9",
