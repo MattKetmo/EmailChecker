@@ -108,7 +108,7 @@ class MyClass
     {
         // Not thow away validator
         return Validator::make($data, [
-    	     'email' => 'required|email|not_throw_away
+    	     'email' => 'required|email|not_throw_away'
     	]);
     }
 }
