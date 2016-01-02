@@ -77,6 +77,49 @@ class User
 }
 ```
 
+## Integration with Laravel 5
+
+To integrate this library with your Laravel 5.x project add the following
+line to the `providers` key within your `config/app.php` file:
+
+```php
+EmailChecker\Laravel\EmailCheckerServiceProvider::class
+```
+
+If you would like to use the `EmailChecker` facade, you must also add the
+following line to the `aliases` key within your `config/app.php` file:
+
+```php
+'EmailChecker' => EmailChecker\Laravel\EmailCheckerFacade::class
+```
+
+You can then use the library within your project like so:
+
+```php
+<?php
+
+class MyClass
+{
+	public function foo()
+	{
+        // Facade Access
+        EmailChecker::isValid('address@domain.com');
+
+        // Container Access
+        $checker = app()->make('email.checker');
+        $checker->isValid('address@domain.com');
+    }
+
+    public function getValidator(array $data)
+    {
+        // Not thow away validator
+        return Validator::make($data, [
+    	     'email' => 'required|email|not_throw_away'
+    	]);
+    }
+}
+```
+
 ## List of some disposable emails database
 
 - http://10minutemail.com
