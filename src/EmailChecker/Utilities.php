@@ -37,8 +37,12 @@ class Utilities
         if (!preg_match($pattern, $email, $parts)) {
             throw new InvalidEmailException(sprintf('"%s" is not a valid email', $email));
         }
+		
+		$array = explode(".", $parts['domain']);
 
-        return array_map('strtolower', array($parts['local'], $parts['domain']));
+		$domain = (array_key_exists(count($array) - 2, $array) ? $array[count($array) - 2] : "").".".$array[count($array) - 1];
+
+        return array_map('strtolower', array($parts['local'], $domain));
     }
 
     /**
