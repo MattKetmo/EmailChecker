@@ -23,7 +23,7 @@ class UtilitiesTest extends TestCase
     {
         list($local, $domain) = Utilities::parseEmailAddress($email);
 
-        $this->assertEquals(array($exceptedLocal, $exceptedDomain), array($local, $domain));
+        $this->assertEquals([$exceptedLocal, $exceptedDomain], [$local, $domain]);
     }
 
     /**
@@ -50,11 +50,11 @@ foo
 TEXT;
 
         $parsedContent = Utilities::parseLines($content);
-        $expectedLines = array(
+        $expectedLines = [
             'uppercase',
             'foo',
             'bar',
-        );
+        ];
 
         $diffs = array_diff($expectedLines, $parsedContent);
 
@@ -70,18 +70,18 @@ MSG;
 
     public static function validEmails()
     {
-        return array(
-            array('foo@bar.org', 'foo', 'bar.org'),
-            array('foo@baz.org', 'foo', 'baz.org'),
-        );
+        return [
+            ['foo@bar.org', 'foo', 'bar.org'],
+            ['foo@baz.org', 'foo', 'baz.org'],
+        ];
     }
 
     public static function invalidEmails()
     {
-        return array(
-            array('foo[at]bar.org'),
-            array('foo@foo@bar.org'),
-            array('foobar.org'),
-        );
+        return [
+            ['foo[at]bar.org'],
+            ['foo@foo@bar.org'],
+            ['foobar.org'],
+        ];
     }
 }

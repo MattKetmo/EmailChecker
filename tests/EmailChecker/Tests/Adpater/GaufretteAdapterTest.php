@@ -47,20 +47,20 @@ class GaufretteAdapterTest extends TestCase
 
     public static function throwawayDomains()
     {
-        return array(
-            array('jetable.org'),
-            array('mailjet.org'),
-            array('dummy-space.ext'),
-            array('yopmail.com'),
-        );
+        return [
+            ['jetable.org'],
+            ['mailjet.org'],
+            ['dummy-space.ext'],
+            ['yopmail.com'],
+        ];
     }
 
     public static function notThrowawayDomains()
     {
-        return array(
-            array('gmail.com'),
-            array('hotmail.com'),
-            array('comment.ext'),
-        );
+        return [
+            ['gmail.com'],
+            ['hotmail.com'],
+            ['comment.ext'],
+        ];
     }
 }

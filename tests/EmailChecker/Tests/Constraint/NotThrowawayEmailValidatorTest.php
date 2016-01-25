@@ -21,7 +21,7 @@ class NotThrowawayEmailValidatorTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->context = $this->getMock('Symfony\Component\Validator\ExecutionContext', array(), array(), '', false);
+        $this->context = $this->getMock('Symfony\Component\Validator\ExecutionContext', [], [], '', false);
         $this->validator = new NotThrowawayEmailValidator();
         $this->validator->initialize($this->context);
     }
@@ -69,10 +69,10 @@ class NotThrowawayEmailValidatorTest extends \PHPUnit_Framework_TestCase
 
     public function getValidEmails()
     {
-        return array(
-            array('matthieu@moquet.com'),
-            array('john.doe@gmail.com'),
-        );
+        return [
+            ['matthieu@moquet.com'],
+            ['john.doe@gmail.com'],
+        ];
     }
 
     /**
@@ -80,9 +80,9 @@ class NotThrowawayEmailValidatorTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidEmails($email)
     {
-        $constraint = new NotThrowawayEmail(array(
+        $constraint = new NotThrowawayEmail([
             'message' => 'myMessage',
-        ));
+        ]);
 
         $this->context->expects($this->once())
             ->method('addViolation')
@@ -93,13 +93,13 @@ class NotThrowawayEmailValidatorTest extends \PHPUnit_Framework_TestCase
 
     public function getInvalidEmails()
     {
-        return array(
+        return [
             // Invalid emails
-            array('example@'),
-            array('example@example.com@example.com'),
+            ['example@'],
+            ['example@example.com@example.com'],
             // Throwaway emails
-            array('example@yopmail.com'),
-            array('example@trashmail.net'),
-        );
+            ['example@yopmail.com'],
+            ['example@trashmail.net'],
+        ];
     }
 }

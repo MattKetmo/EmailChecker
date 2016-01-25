@@ -16,7 +16,7 @@ return Symfony\CS\Config\Config::create()
     ->fixers(array(
         'header_comment',
         'ordered_use',
-        'long_array_syntax',
+        'short_array_syntax',
     ))
     ->setUsingCache(true)
     ->setUsingLinter(false)

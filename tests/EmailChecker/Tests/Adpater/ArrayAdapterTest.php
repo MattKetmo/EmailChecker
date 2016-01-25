@@ -16,10 +16,10 @@ use EmailChecker\Tests\TestCase;
 
 class ArrayAdapterTest extends TestCase
 {
-    protected static $throawayDomains = array(
+    protected static $throawayDomains = [
         'jetable.org',
         'mailjet.org',
-    );
+    ];
 
     protected $adapter;
 
@@ -46,17 +46,17 @@ class ArrayAdapterTest extends TestCase
 
     public static function throwawayDomains()
     {
-        return array(
-            array('jetable.org'),
-            array('mailjet.org'),
-        );
+        return [
+            ['jetable.org'],
+            ['mailjet.org'],
+        ];
     }
 
     public static function notThrowawayDomains()
     {
-        return array(
-            array('gmail.com'),
-            array('hotmail.com'),
-        );
+        return [
+            ['gmail.com'],
+            ['hotmail.com'],
+        ];
     }
 }

@@ -71,6 +71,6 @@ class EmailCheckerServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('email.checker', EmailChecker::class);
+        return ['email.checker', EmailChecker::class];
     }
 }
