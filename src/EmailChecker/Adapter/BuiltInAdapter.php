@@ -11,6 +11,8 @@
 
 namespace EmailChecker\Adapter;
 
+use EmailChecker\ThrowawayDomains;
+
 /**
  * Built-in adapter.
  *
@@ -21,12 +23,14 @@ namespace EmailChecker\Adapter;
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-class BuiltInAdapter extends FileAdapter
+class BuiltInAdapter extends ArrayAdapter
 {
     protected $domains;
 
     public function __construct()
     {
-        parent::__construct(__DIR__.'/../../../res/throwaway_domains.txt');
+        parent::__construct(
+            (new ThrowawayDomains())->toArray()
+        );
     }
 }
