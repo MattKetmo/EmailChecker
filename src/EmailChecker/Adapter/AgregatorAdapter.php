@@ -27,6 +27,14 @@ class AgregatorAdapter implements AdapterInterface
      */
     public function __construct(array $adapters)
     {
+        foreach ($adapters as $adapter) {
+            if (!$adapter instanceof AdapterInterface) {
+                throw new \InvalidArgumentException(
+                    'AgregatorAdapter only accept instances of AdapterInterface'
+                );
+            }
+        }
+
         $this->adapters = $adapters;
     }
 

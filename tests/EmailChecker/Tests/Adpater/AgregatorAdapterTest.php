@@ -47,6 +47,17 @@ class AgregatorAdapterTest extends TestCase
     }
 
     /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testCheckArrayValuesInstanceOf()
+    {
+        new AgregatorAdapter([
+            new \stdClass(),
+            new \stdClass(),
+        ]);
+    }
+
+    /**
      * Build a mock of adapter interface.
      *
      * @param bool $isThrowawayDomain The value returned by the isThrowawayDomain method
