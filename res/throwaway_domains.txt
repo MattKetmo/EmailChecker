@@ -79,6 +79,7 @@ a.mailcker.com
 a.vztc.com
 a45.in
 abyssmail.com
+add3000.pp.ua
 afrobacon.com
 ag.us.to
 agedmail.com
@@ -111,6 +112,7 @@ armyspy.com
 artman-conception.com
 asdasd.nl
 asdasd.ru
+ass.pp.ua
 atvclub.msk.ru
 auti.st
 avpa.nl
@@ -177,9 +179,6 @@ chong-mail.org
 clipmail.eu
 clixser.com
 clrmail.com
-cmail.com
-cmail.net
-cmail.org
 cock.li
 coieo.com
 coldemail.info
@@ -323,6 +322,7 @@ emkei.ga
 emkei.gq
 emkei.ml
 emkei.tk
+eml.pp.ua
 emz.net
 enterto.com
 ephemail.net
@@ -333,14 +333,15 @@ etranquil.org
 evopo.com
 explodemail.com
 express.net.ua
-eyepaste.com
 extremail.ru
+eyepaste.com
 facebook-email.cf
 facebook-email.ga
 facebook-email.ml
 facebookmail.gq
 facebookmail.ml
 fake-box.com
+fake-email.pp.ua
 fake-mail.cf
 fake-mail.ga
 fake-mail.ml
@@ -410,6 +411,7 @@ get-mail.cf
 get-mail.ga
 get-mail.ml
 get-mail.tk
+get.pp.ua
 get1mail.com
 get2mail.fr
 getairmail.cf
@@ -518,7 +520,9 @@ infocom.zp.ua
 insorg-mail.info
 instant-mail.de
 iozak.com
+ip4.pp.ua
 ip6.li
+ip6.pp.ua
 ipoo.org
 irish2me.com
 is.af
@@ -527,6 +531,7 @@ jetable.com
 jetable.fr.nf
 jetable.net
 jetable.org
+jetable.pp.ua
 jnxjn.com
 jourrapide.com
 jsrsolutions.com
@@ -540,6 +545,7 @@ keepmymail.com
 killmail.com
 killmail.net
 kir.ch.tc
+kismail.ru
 klassmaster.com
 klassmaster.net
 klzlk.com
@@ -568,6 +574,7 @@ login-email.cf
 login-email.ga
 login-email.ml
 login-email.tk
+loh.pp.ua
 lol.ovpn.to
 lolfreak.net
 lookugly.com
@@ -698,6 +705,7 @@ moncourrier.fr.nf
 monemail.fr.nf
 monmail.fr.nf
 monumentmail.com
+mox.pp.ua
 msa.minsmail.com
 msb.minsmail.com
 mswork.ru
@@ -705,6 +713,7 @@ mt2009.com
 mt2014.com
 mt2015.com
 muchomail.com
+mvrht.com
 mx0.wwwnew.eu
 my10minutemail.com
 mycard.net.ua
@@ -798,12 +807,20 @@ pfui.ru
 pimpedupmyspace.com
 pjjkp.com
 plexolan.de
+<<<<<<< HEAD
+||||||| parent of 5f72eba... Added throwaway domains.
+poczta.onet.pl
+=======
+poczta.onet.pl
+poh.pp.ua
+>>>>>>> 5f72eba... Added throwaway domains.
 politikerclub.de
 pooae.com
 poofy.org
 pookmail.com
 postonline.me
 powered.name
+pp.ua
 privacy.net
 privatdemail.net
 privy-mail.com
@@ -982,6 +999,7 @@ stop-my-spam.cf
 stop-my-spam.com
 stop-my-spam.ga
 stop-my-spam.ml
+stop-my-spam.pp.ua
 stop-my-spam.tk
 stuffmail.de
 suioe.com
@@ -1126,6 +1144,7 @@ wants.dicksinmyan.us
 wasteland.rfc822.org
 watch-harry-potter.com
 watchfull.net
+web-mail.pp.ua
 webemail.me
 webm4il.info
 webuser.in
@@ -1191,6 +1210,7 @@ yopmail.com
 yopmail.fr
 yopmail.gq
 yopmail.net
+yopmail.pp.ua
 you-spam.com
 youmail.ga
 youmailr.com
@@ -1200,6 +1220,7 @@ yuurok.com
 yxzx.net
 z1p.biz
 za.com
+zasod.com
 zebins.com
 zebins.eu
 zehnminuten.de
