@@ -23,13 +23,6 @@ use Validator;
 class EmailCheckerServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
-    /**
      * Register the factory in the application container.
      */
     public function register()
