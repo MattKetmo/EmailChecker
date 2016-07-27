@@ -549,7 +549,6 @@ kismail.ru
 klassmaster.com
 klassmaster.net
 klzlk.com
-kismail.ru
 kmhow.com
 kostenlosemailadresse.de
 koszmail.pl
@@ -807,13 +806,8 @@ pfui.ru
 pimpedupmyspace.com
 pjjkp.com
 plexolan.de
-<<<<<<< HEAD
-||||||| parent of 5f72eba... Added throwaway domains.
-poczta.onet.pl
-=======
 poczta.onet.pl
 poh.pp.ua
->>>>>>> 5f72eba... Added throwaway domains.
 politikerclub.de
 pooae.com
 poofy.org
