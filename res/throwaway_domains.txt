@@ -29,6 +29,7 @@
 1mail.ml
 1pad.de
 1zhuan.com
+20email.eu
 20mail.it
 20minutemail.com
 21cn.com
