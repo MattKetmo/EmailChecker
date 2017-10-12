@@ -1101,7 +1101,6 @@ kostenlosemailadresse.de
 koszmail.pl
 krypton.tk
 ksiskdiwey.cf
-ksiskdiwey.cf
 kuhrap.com
 kulturbetrieb.info
 kurzepost.de
@@ -1316,7 +1315,6 @@ mbx.cc
 mcache.net
 mciek.com
 mdhc.tk
-mdhc.tk
 meepsheep.eu
 mega.zik.dj
 meinspamschutz.de
@@ -1358,7 +1356,6 @@ moeri.org
 mohmal.com
 mohmal.tech
 momentics.ru
-monadi.ml
 monadi.ml
 moncourrier.fr.nf
 monemail.fr.nf
@@ -1425,7 +1422,6 @@ mytempmail.com
 mytrashmail.com
 mywarnernet.net
 myzx.com
-n.spamtrap.co
 n.spamtrap.co
 n1nja.org
 nabuma.com
@@ -2118,7 +2114,6 @@ twoweirdtricks.com
 txtadvertise.com
 tyhe.ro
 tyldd.com
-u.0u.ro
 u.0u.ro
 u.dmarc.ro
 uacro.com
