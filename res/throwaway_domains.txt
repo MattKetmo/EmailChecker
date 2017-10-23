@@ -1603,6 +1603,7 @@ mailtraps.com
 mailtrash.net
 mailtv.net
 mailtv.tv
+mailxcdn.com
 mailzi.ru
 mailzilla.com
 mailzilla.org
@@ -2832,5 +2833,3 @@ zxcv.com
 zxcvbnm.com
 zzi.us
 zzz.com
-mailna.biz
-mailxcdn.com
