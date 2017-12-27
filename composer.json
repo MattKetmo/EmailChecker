@@ -32,6 +32,16 @@
             "EmailChecker\\Tests\\": "tests/EmailChecker/Tests"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EmailChecker\\Laravel\\EmailCheckerServiceProvider"
+            ],
+            "aliases": {
+                "EmailChecker": "EmailChecker\\Laravel\\EmailCheckerFacade"
+            }
+        }
+    },
     "scripts": {
         "test": [
             "phpunit --colors=always"
