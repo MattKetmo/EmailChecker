@@ -124,6 +124,7 @@ class MyClass
 
 - http://10minutemail.com
 - http://spamdecoy.net
+- http://temp-mail.org
 - http://torvpn.com/temporaryemail.html
 - http://www.bloggingwv.com/big-list-of-disposable-temporary-email-services/
 - http://www.fakemailgenerator.com/
