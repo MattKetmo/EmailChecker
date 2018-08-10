@@ -66,7 +66,9 @@ class AgregatorAdapterTest extends TestCase
      */
     protected function getAdapterMock($isThrowawayDomain, $call = 'any')
     {
-        $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
+        $adapter = $this->getMockBuilder('EmailChecker\Adapter\AdapterInterface')
+            ->disableOriginalConstructor()
+            ->getMock();
         $adapter->expects($this->$call())
             ->method('isThrowawayDomain')
             ->will($this->returnValue($isThrowawayDomain));

@@ -53,7 +53,9 @@ class EmailCheckerServiceProvider extends ServiceProvider
         };
 
         Validator::extend(
-            'not_throw_away', $check, 'The :attribute domain is invalid.'
+            'not_throw_away',
+            $check,
+            'The :attribute domain is invalid.'
         );
     }
 

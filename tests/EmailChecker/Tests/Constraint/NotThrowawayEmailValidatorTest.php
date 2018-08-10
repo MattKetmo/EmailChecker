@@ -13,15 +13,18 @@ namespace EmailChecker\Tests\Constraint;
 
 use EmailChecker\Constraints\NotThrowawayEmail;
 use EmailChecker\Constraints\NotThrowawayEmailValidator;
+use PHPUnit\Framework\TestCase;
 
-class NotThrowawayEmailValidatorTest extends \PHPUnit_Framework_TestCase
+class NotThrowawayEmailValidatorTest extends TestCase
 {
     protected $context;
     protected $validator;
 
     protected function setUp()
     {
-        $this->context = $this->getMock('Symfony\Component\Validator\ExecutionContext', [], [], '', false);
+        $this->context = $this->getMockBuilder('Symfony\Component\Validator\ExecutionContext')
+            ->disableOriginalConstructor()
+            ->getMock();
         $this->validator = new NotThrowawayEmailValidator();
         $this->validator->initialize($this->context);
     }

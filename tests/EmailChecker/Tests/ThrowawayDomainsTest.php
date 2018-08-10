@@ -19,7 +19,8 @@ class ThrowawayDomainsTest extends TestCase
     {
         $domains = new ThrowawayDomains();
 
-        $this->assertTrue(is_array($domains->toArray()));
+        $this->assertInternalType('array', $domains->toArray());
+        $this->assertInstanceOf('\ArrayIterator', $domains->getIterator());
         $this->assertGreaterThan(0, count($domains));
     }
 }

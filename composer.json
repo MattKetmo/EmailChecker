@@ -15,7 +15,7 @@
     "require-dev": {
         "fabpot/php-cs-fixer": "^1.9",
         "knplabs/gaufrette": "^0.1",
-        "phpunit/phpunit": "^4.8",
+        "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5",
         "symfony/validator": "^2.1"
     },
     "suggest": {
