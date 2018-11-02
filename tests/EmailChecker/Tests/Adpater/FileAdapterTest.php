@@ -57,4 +57,13 @@ class FileAdapterTest extends TestCase
             ['comment.ext'],
         ];
     }
+
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testConstructorOnInvalidFilePath()
+    {
+        new FileAdapter('invalid_file');
+    }
 }
