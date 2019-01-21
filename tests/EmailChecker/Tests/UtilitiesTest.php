@@ -41,7 +41,7 @@ class UtilitiesTest extends TestCase
 
     public function testParseLines()
     {
-        $content = <<<TEXT
+        $content = <<<'TEXT'
 # This is a comment and should be parsed
 Uppercase
 foo
@@ -58,7 +58,7 @@ TEXT;
 
         $diffs = array_diff($expectedLines, $parsedContent);
 
-        $message = <<<MSG
+        $message = <<<'MSG'
 Failed asserting that parsed content equals expected lines.
 Expected:
 %s
