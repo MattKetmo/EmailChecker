@@ -21,7 +21,7 @@ class NotThrowawayEmailValidatorTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->context = $this->getMock('Symfony\Component\Validator\ExecutionContext', [], [], '', false);
+        $this->context = $this->getMock('Symfony\Component\Validator\Context\ExecutionContextInterface', [], [], '', false);
         $this->validator = new NotThrowawayEmailValidator();
         $this->validator->initialize($this->context);
     }
