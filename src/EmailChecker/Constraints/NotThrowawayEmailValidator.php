@@ -22,16 +22,6 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
  */
 class NotThrowawayEmailValidator extends ConstraintValidator
 {
-    protected $emailChecker;
-
-    /**
-     * @param EmailChecker $emailChecker
-     */
-    public function __construct(EmailChecker $emailChecker = null)
-    {
-        $this->emailChecker = $emailChecker ?: new EmailChecker(new BuiltInAdapter());
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -45,7 +35,9 @@ class NotThrowawayEmailValidator extends ConstraintValidator
             throw new UnexpectedTypeException($value, 'string');
         }
 
-        if (!$this->emailChecker->isValid($value)) {
+        $emailChecker = $constraint->getEmailChecker();
+
+        if (!$emailChecker->isValid($value)) {
             $this->context->addViolation($constraint->message);
         }
     }
