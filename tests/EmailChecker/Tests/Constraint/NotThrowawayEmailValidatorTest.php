@@ -13,21 +13,28 @@ namespace EmailChecker\Tests\Constraint;
 
 use EmailChecker\Constraints\NotThrowawayEmail;
 use EmailChecker\Constraints\NotThrowawayEmailValidator;
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-class NotThrowawayEmailValidatorTest extends \PHPUnit_Framework_TestCase
+class NotThrowawayEmailValidatorTest extends TestCase
 {
     protected $context;
     protected $validator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->context = $this->getMock('Symfony\Component\Validator\Context\ExecutionContextInterface', [], [], '', false);
+        parent::setUp();
+
+        $this->context = $this->createMock(ExecutionContextInterface::class);
         $this->validator = new NotThrowawayEmailValidator();
         $this->validator->initialize($this->context);
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
+        parent::tearDown();
+
         $this->context = null;
         $this->validator = null;
     }
@@ -48,11 +55,10 @@ class NotThrowawayEmailValidatorTest extends \PHPUnit_Framework_TestCase
         $this->validator->validate('', new NotThrowawayEmail());
     }
 
-    /**
-     * @expectedException \Symfony\Component\Validator\Exception\UnexpectedTypeException
-     */
     public function testExpectsStringCompatibleType()
     {
+        $this->expectException(UnexpectedTypeException::class);
+
         $this->validator->validate(new \stdClass(), new NotThrowawayEmail());
     }
 

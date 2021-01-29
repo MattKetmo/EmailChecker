@@ -11,13 +11,14 @@
 
 namespace EmailChecker\Tests;
 
+use EmailChecker\Adapter\AdapterInterface;
 use EmailChecker\EmailChecker;
 
 class EmailCheckerTest extends TestCase
 {
     public function testEmailIsValid()
     {
-        $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
+        $adapter = $this->createMock(AdapterInterface::class);
         $adapter->expects($this->any())
              ->method('isThrowawayDomain')
              ->will($this->returnValue(false));
@@ -29,7 +30,7 @@ class EmailCheckerTest extends TestCase
 
     public function testEmailIsNotValid()
     {
-        $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
+        $adapter = $this->createMock(AdapterInterface::class);
         $adapter->expects($this->any())
              ->method('isThrowawayDomain')
              ->will($this->returnValue(true));
@@ -41,7 +42,7 @@ class EmailCheckerTest extends TestCase
 
     public function testMalformattedEmail()
     {
-        $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
+        $adapter = $this->createMock(AdapterInterface::class);
         $checker = new EmailChecker($adapter);
 
         $this->assertFalse($checker->isValid('foo[at]bar.org'));
