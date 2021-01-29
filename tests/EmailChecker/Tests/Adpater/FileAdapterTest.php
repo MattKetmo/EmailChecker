@@ -18,8 +18,10 @@ class FileAdapterTest extends TestCase
 {
     protected $adapter;
 
-    public function setUp()
+    protected function setUp(): void
     {
+        parent::setUp();
+
         $this->adapter = new FileAdapter(__DIR__.'/../../../fixtures/throwaway_domains.txt');
     }
 
