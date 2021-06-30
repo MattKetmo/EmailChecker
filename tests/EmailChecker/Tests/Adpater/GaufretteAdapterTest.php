@@ -21,8 +21,10 @@ class GaufretteAdapterTest extends TestCase
 {
     protected $adapter;
 
-    public function setUp()
+    protected function setUp(): void
     {
+        parent::setUp();
+
         $filesystem = new Filesystem(new LocalAdapter(__DIR__.'/../../../fixtures'));
         $file = new File('throwaway_domains.txt', $filesystem);
 

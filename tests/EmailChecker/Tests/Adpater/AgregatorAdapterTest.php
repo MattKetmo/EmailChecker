@@ -11,6 +11,7 @@
 
 namespace EmailChecker\Tests\Adpater;
 
+use EmailChecker\Adapter\AdapterInterface;
 use EmailChecker\Adapter\AgregatorAdapter;
 use EmailChecker\Tests\TestCase;
 
@@ -46,11 +47,10 @@ class AgregatorAdapterTest extends TestCase
         $this->assertTrue($this->adapter->isThrowawayDomain('example.org'));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testCheckArrayValuesInstanceOf()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         new AgregatorAdapter([
             new \stdClass(),
             new \stdClass(),
@@ -66,7 +66,7 @@ class AgregatorAdapterTest extends TestCase
      */
     protected function getAdapterMock($isThrowawayDomain, $call = 'any')
     {
-        $adapter = $this->getMock('EmailChecker\Adapter\AdapterInterface');
+        $adapter = $this->createMock(AdapterInterface::class);
         $adapter->expects($this->$call())
             ->method('isThrowawayDomain')
             ->will($this->returnValue($isThrowawayDomain));
