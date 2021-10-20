@@ -13,7 +13,7 @@ namespace EmailChecker\Laravel;
 
 use EmailChecker\EmailChecker;
 use Illuminate\Support\ServiceProvider;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Laravel service provider.
