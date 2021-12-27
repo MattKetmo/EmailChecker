@@ -30,12 +30,12 @@ class ThrowawayDomains implements \IteratorAggregate, \Countable
         return $this->domains;
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->toArray());
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->domains);
     }
