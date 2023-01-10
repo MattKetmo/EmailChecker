@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Validator;
  */
 class EmailCheckerServiceProvider extends ServiceProvider
 {
+    protected $app;
+
     /**
      * Register the factory in the application container.
      */
