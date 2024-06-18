@@ -32,6 +32,10 @@ class Utilities
      */
     public static function parseEmailAddress($email)
     {
+        if (!is_string($email)) {
+            throw new InvalidEmailException(sprintf('Expected a string, received %s', gettype($email)));
+        }
+
         $pattern = sprintf('/^(?<local>%s)@(?<domain>%s)$/iD', self::EMAIL_REGEX_LOCAL, self::EMAIL_REGEX_DOMAIN);
 
         if (!preg_match($pattern, $email, $parts)) {
