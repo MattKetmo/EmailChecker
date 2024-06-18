@@ -10,13 +10,14 @@
         }
     ],
     "require": {
-        "php": "^5.4 || ^7.0"
+        "php": "^7.1 || ^8.0"
     },
     "require-dev": {
-        "fabpot/php-cs-fixer": "^1.9",
-        "knplabs/gaufrette": "^0.1",
-        "phpunit/phpunit": "^4.8",
-        "symfony/validator": "^2.1"
+        "friendsofphp/php-cs-fixer": "^2.18",
+        "illuminate/support": "^5.0 || ^6.0 || ^7.0 || ^8.0",
+        "knplabs/gaufrette": "^0.10",
+        "phpunit/phpunit": "^7.5 || ^9.5",
+        "symfony/validator": "^3.0 || ^4.0 || ^5.0"
     },
     "suggest": {
         "symfony/validator": "Add validation constraints",
@@ -30,6 +31,16 @@
     "autoload-dev": {
         "psr-4": {
             "EmailChecker\\Tests\\": "tests/EmailChecker/Tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "EmailChecker\\Laravel\\EmailCheckerServiceProvider"
+            ],
+            "aliases": {
+                "EmailChecker": "EmailChecker\\Laravel\\EmailCheckerFacade"
+            }
         }
     },
     "scripts": {

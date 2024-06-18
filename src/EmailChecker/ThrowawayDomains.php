@@ -18,6 +18,8 @@ namespace EmailChecker;
  */
 class ThrowawayDomains implements \IteratorAggregate, \Countable
 {
+    protected $domains;
+
     public function __construct()
     {
         $this->domains = Utilities::parseLines(file_get_contents(
@@ -30,12 +32,12 @@ class ThrowawayDomains implements \IteratorAggregate, \Countable
         return $this->domains;
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->toArray());
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->domains);
     }

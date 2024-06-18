@@ -23,8 +23,10 @@ class ArrayAdapterTest extends TestCase
 
     protected $adapter;
 
-    public function setUp()
+    protected function setUp(): void
     {
+        parent::setUp();
+
         $this->adapter = new ArrayAdapter(self::$throawayDomains);
     }
 
