@@ -13,7 +13,7 @@ namespace EmailChecker\Laravel;
 
 use EmailChecker\EmailChecker;
 use Illuminate\Support\ServiceProvider;
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 /**
  * Laravel service provider.
@@ -22,6 +22,8 @@ use Validator;
  */
 class EmailCheckerServiceProvider extends ServiceProvider
 {
+    protected $app;
+
     /**
      * Register the factory in the application container.
      */
