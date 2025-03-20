@@ -24,7 +24,7 @@ class NotThrowawayEmail extends Constraint
 
     public function __construct(
         $options = null,
-        array $groups = null,
+        ?array $groups = null,
         $payload = null,
         ?string $message = null
     ) {
