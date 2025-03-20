@@ -27,7 +27,7 @@ class EmailChecker
     /**
      * @param AdapterInterface $adapter Checker adapter
      */
-    public function __construct(AdapterInterface $adapter = null)
+    public function __construct(?AdapterInterface $adapter = null)
     {
         $this->adapter = $adapter ?: new BuiltInAdapter();
     }
