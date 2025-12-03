@@ -22,9 +22,9 @@ class AgregatorAdapterTest extends TestCase
         $adapter1 = $this->getAdapterMock(false, 'once');
         $adapter2 = $this->getAdapterMock(false, 'once');
 
-        $this->adapter = new AgregatorAdapter([$adapter1, $adapter2]);
+        $adapter = new AgregatorAdapter([$adapter1, $adapter2]);
 
-        $this->assertFalse($this->adapter->isThrowawayDomain('example.org'));
+        $this->assertFalse($adapter->isThrowawayDomain('example.org'));
     }
 
     public function testFirstInvalid()
@@ -32,9 +32,9 @@ class AgregatorAdapterTest extends TestCase
         $adapter1 = $this->getAdapterMock(true, 'once');
         $adapter2 = $this->getAdapterMock(false, 'never');
 
-        $this->adapter = new AgregatorAdapter([$adapter1, $adapter2]);
+        $adapter = new AgregatorAdapter([$adapter1, $adapter2]);
 
-        $this->assertTrue($this->adapter->isThrowawayDomain('example.org'));
+        $this->assertTrue($adapter->isThrowawayDomain('example.org'));
     }
 
     public function testSecondInvalid()
@@ -42,9 +42,9 @@ class AgregatorAdapterTest extends TestCase
         $adapter1 = $this->getAdapterMock(false, 'once');
         $adapter2 = $this->getAdapterMock(true, 'once');
 
-        $this->adapter = new AgregatorAdapter([$adapter1, $adapter2]);
+        $adapter = new AgregatorAdapter([$adapter1, $adapter2]);
 
-        $this->assertTrue($this->adapter->isThrowawayDomain('example.org'));
+        $this->assertTrue($adapter->isThrowawayDomain('example.org'));
     }
 
     public function testCheckArrayValuesInstanceOf()
