@@ -54,6 +54,24 @@ class EmailChecker
             return false;
         }
 
-        return !$this->adapter->isThrowawayDomain($domain);
+        foreach ($this->allDomainSuffixes($domain) as $domainSuffix) {
+            if ($this->adapter->isThrowawayDomain($domainSuffix)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * @return iterable<string>
+     */
+    private function allDomainSuffixes(string $domain): iterable
+    {
+        $components = explode('.', $domain);
+
+        foreach ($components as $i => $_) {
+            yield implode('.', array_slice($components, $i));
+        }
     }
 }
