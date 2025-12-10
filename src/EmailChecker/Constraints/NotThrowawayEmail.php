@@ -27,11 +27,16 @@ class NotThrowawayEmail extends Constraint
     public $message = 'The domain associated with this email is not valid.';
 
     public function __construct(
-        $options = null,
+        array|string|null $message = null,
         ?array $groups = null,
-        $payload = null,
-        ?string $message = null,
+        mixed $payload = null,
     ) {
+        $options = [];
+        if (\is_array($message)) {
+            $options = $message;
+            $message = $options['message'] ?? null;
+        }
+
         parent::__construct($options, $groups, $payload);
 
         $this->message = $message ?? $this->message;
