@@ -12,17 +12,14 @@
 namespace EmailChecker\Tests;
 
 use EmailChecker\Adapter\AdapterInterface;
+use EmailChecker\Adapter\ArrayAdapter;
 use EmailChecker\EmailChecker;
 
 final class EmailCheckerTest extends TestCase
 {
     public function testEmailIsValid(): void
     {
-        $adapter = $this->createMock(AdapterInterface::class);
-        $adapter
-             ->method('isThrowawayDomain')
-             ->willReturn(false);
-
+        $adapter = new ArrayAdapter([]);
         $checker = new EmailChecker($adapter);
 
         self::assertTrue($checker->isValid('foo@bar.org'));
@@ -30,11 +27,7 @@ final class EmailCheckerTest extends TestCase
 
     public function testEmailIsNotValid(): void
     {
-        $adapter = $this->createMock(AdapterInterface::class);
-        $adapter
-             ->method('isThrowawayDomain')
-             ->willReturn(true);
-
+        $adapter = new ArrayAdapter(['bar.org']);
         $checker = new EmailChecker($adapter);
 
         self::assertFalse($checker->isValid('foo@bar.org'));
@@ -42,9 +35,17 @@ final class EmailCheckerTest extends TestCase
 
     public function testMalformattedEmail(): void
     {
-        $adapter = $this->createMock(AdapterInterface::class);
+        $adapter = new ArrayAdapter([]);
         $checker = new EmailChecker($adapter);
 
         self::assertFalse($checker->isValid('foo[at]bar.org'));
+    }
+
+    public function testSubDomain(): void
+    {
+        $adapter = new ArrayAdapter(['bar.org']);
+        $checker = new EmailChecker($adapter);
+
+        self::assertFalse($checker->isValid('foo@baz.bar.org'));
     }
 }
