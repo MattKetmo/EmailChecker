@@ -14,9 +14,9 @@ namespace EmailChecker\Tests\Adpater;
 use EmailChecker\Adapter\BuiltInAdapter;
 use EmailChecker\Tests\TestCase;
 
-class BuiltInAdapterTest extends TestCase
+final class BuiltInAdapterTest extends TestCase
 {
-    protected $adapter;
+    private BuiltInAdapter $adapter;
 
     protected function setUp(): void
     {
@@ -28,12 +28,12 @@ class BuiltInAdapterTest extends TestCase
     /**
      * @dataProvider throwawayDomains
      */
-    public function testThrowawayDomains($domain)
+    public function testThrowawayDomains(string $domain): void
     {
         $this->assertTrue($this->adapter->isThrowawayDomain($domain));
     }
 
-    public static function throwawayDomains()
+    public static function throwawayDomains(): iterable
     {
         // List of some of the built-in throwaway domains
         return [

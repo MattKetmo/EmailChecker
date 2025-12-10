@@ -14,12 +14,12 @@ namespace EmailChecker\Tests;
 use EmailChecker\Exception\InvalidEmailException;
 use EmailChecker\Utilities;
 
-class UtilitiesTest extends TestCase
+final class UtilitiesTest extends TestCase
 {
     /**
      * @dataProvider validEmails
      */
-    public function testParseValidEmail($email, $exceptedLocal, $exceptedDomain)
+    public function testParseValidEmail(string $email, string $exceptedLocal, string $exceptedDomain): void
     {
         list($local, $domain) = Utilities::parseEmailAddress($email);
 
@@ -29,7 +29,7 @@ class UtilitiesTest extends TestCase
     /**
      * @dataProvider invalidEmails
      */
-    public function testParseInvalidEmail($email)
+    public function testParseInvalidEmail(string $email): void
     {
         try {
             Utilities::parseEmailAddress($email);
@@ -39,7 +39,7 @@ class UtilitiesTest extends TestCase
         }
     }
 
-    public function testParseLines()
+    public function testParseLines(): void
     {
         $content = <<<'TEXT'
 # This is a comment and should be parsed
@@ -68,7 +68,7 @@ MSG;
         $this->assertEmpty($diffs, sprintf($message, print_r($expectedLines, true), print_r($parsedContent, true)));
     }
 
-    public static function validEmails()
+    public static function validEmails(): iterable
     {
         return [
             ['foo@bar.org', 'foo', 'bar.org'],
@@ -76,7 +76,7 @@ MSG;
         ];
     }
 
-    public static function invalidEmails()
+    public static function invalidEmails(): iterable
     {
         return [
             ['foo[at]bar.org'],

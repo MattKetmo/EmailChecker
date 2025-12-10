@@ -22,6 +22,9 @@ use EmailChecker\Exception\InvalidEmailException;
  */
 class EmailChecker
 {
+    /**
+     * @var AdapterInterface
+     */
     protected $adapter;
 
     /**
@@ -29,7 +32,7 @@ class EmailChecker
      */
     public function __construct(?AdapterInterface $adapter = null)
     {
-        $this->adapter = $adapter ?: new BuiltInAdapter();
+        $this->adapter = $adapter ?? new BuiltInAdapter();
     }
 
     /**

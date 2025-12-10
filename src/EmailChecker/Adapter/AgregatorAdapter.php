@@ -18,21 +18,18 @@ namespace EmailChecker\Adapter;
  */
 class AgregatorAdapter implements AdapterInterface
 {
+    /**
+     * @var AdapterInterface[]
+     */
     protected $adapters;
 
     /**
-     * Build agregator adapter with a list of adpaters (order matters).
+     * Build aggregator adapter with a list of adapters (order matters).
      *
-     * @param array $adapters List of AdapterInterface objects
+     * @param AdapterInterface[] $adapters List of AdapterInterface objects
      */
     public function __construct(array $adapters)
     {
-        foreach ($adapters as $adapter) {
-            if (!$adapter instanceof AdapterInterface) {
-                throw new \InvalidArgumentException('AgregatorAdapter only accept instances of AdapterInterface');
-            }
-        }
-
         $this->adapters = $adapters;
     }
 

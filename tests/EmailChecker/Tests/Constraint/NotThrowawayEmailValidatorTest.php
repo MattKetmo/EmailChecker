@@ -13,14 +13,16 @@ namespace EmailChecker\Tests\Constraint;
 
 use EmailChecker\Constraints\NotThrowawayEmail;
 use EmailChecker\Constraints\NotThrowawayEmailValidator;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 
-class NotThrowawayEmailValidatorTest extends TestCase
+final class NotThrowawayEmailValidatorTest extends TestCase
 {
-    protected $context;
-    protected $validator;
+    /** @var ExecutionContextInterface&MockObject */
+    private MockObject $context;
+    private NotThrowawayEmailValidator $validator;
 
     protected function setUp(): void
     {
@@ -31,15 +33,7 @@ class NotThrowawayEmailValidatorTest extends TestCase
         $this->validator->initialize($this->context);
     }
 
-    protected function tearDown(): void
-    {
-        parent::tearDown();
-
-        $this->context = null;
-        $this->validator = null;
-    }
-
-    public function testNullIsValid()
+    public function testNullIsValid(): void
     {
         $this->context->expects($this->never())
             ->method('addViolation');
@@ -47,7 +41,7 @@ class NotThrowawayEmailValidatorTest extends TestCase
         $this->validator->validate(null, new NotThrowawayEmail());
     }
 
-    public function testEmptyStringIsValid()
+    public function testEmptyStringIsValid(): void
     {
         $this->context->expects($this->never())
             ->method('addViolation');
@@ -55,7 +49,7 @@ class NotThrowawayEmailValidatorTest extends TestCase
         $this->validator->validate('', new NotThrowawayEmail());
     }
 
-    public function testExpectsStringCompatibleType()
+    public function testExpectsStringCompatibleType(): void
     {
         $this->expectException(UnexpectedTypeException::class);
 
@@ -65,7 +59,7 @@ class NotThrowawayEmailValidatorTest extends TestCase
     /**
      * @dataProvider getValidEmails
      */
-    public function testValidEmails($email)
+    public function testValidEmails(string $email): void
     {
         $this->context->expects($this->never())
             ->method('addViolation');
@@ -73,7 +67,7 @@ class NotThrowawayEmailValidatorTest extends TestCase
         $this->validator->validate($email, new NotThrowawayEmail());
     }
 
-    public function getValidEmails()
+    public function getValidEmails(): iterable
     {
         return [
             ['matthieu@moquet.com'],
@@ -84,7 +78,7 @@ class NotThrowawayEmailValidatorTest extends TestCase
     /**
      * @dataProvider getInvalidEmails
      */
-    public function testInvalidEmails($email)
+    public function testInvalidEmails(string $email): void
     {
         $constraint = new NotThrowawayEmail([
             'message' => 'myMessage',
@@ -97,7 +91,7 @@ class NotThrowawayEmailValidatorTest extends TestCase
         $this->validator->validate($email, $constraint);
     }
 
-    public function getInvalidEmails()
+    public function getInvalidEmails(): iterable
     {
         return [
             // Invalid emails

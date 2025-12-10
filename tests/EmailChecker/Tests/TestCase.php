@@ -11,10 +11,17 @@
 
 namespace EmailChecker\Tests;
 
-class TestCase extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase as PHPUnitTestCase;
+
+abstract class TestCase extends PHPUnitTestCase
 {
-    protected function getFixtures($file)
+    protected function getFixtures(string $file): string
     {
-        return file_get_contents(__DIR__.'/../../fixtures/'.$file);
+        $content = file_get_contents(__DIR__.'/../../fixtures/'.$file);
+        if (false === $content) {
+            throw new \InvalidArgumentException(sprintf('File "%s" not found', $file));
+        }
+
+        return $content;
     }
 }

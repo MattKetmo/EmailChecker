@@ -15,46 +15,36 @@ use EmailChecker\Adapter\AdapterInterface;
 use EmailChecker\Adapter\AgregatorAdapter;
 use EmailChecker\Tests\TestCase;
 
-class AgregatorAdapterTest extends TestCase
+final class AgregatorAdapterTest extends TestCase
 {
-    public function testAllValid()
+    public function testAllValid(): void
     {
         $adapter1 = $this->getAdapterMock(false, 'once');
         $adapter2 = $this->getAdapterMock(false, 'once');
 
-        $this->adapter = new AgregatorAdapter([$adapter1, $adapter2]);
+        $adapter = new AgregatorAdapter([$adapter1, $adapter2]);
 
-        $this->assertFalse($this->adapter->isThrowawayDomain('example.org'));
+        $this->assertFalse($adapter->isThrowawayDomain('example.org'));
     }
 
-    public function testFirstInvalid()
+    public function testFirstInvalid(): void
     {
         $adapter1 = $this->getAdapterMock(true, 'once');
         $adapter2 = $this->getAdapterMock(false, 'never');
 
-        $this->adapter = new AgregatorAdapter([$adapter1, $adapter2]);
+        $adapter = new AgregatorAdapter([$adapter1, $adapter2]);
 
-        $this->assertTrue($this->adapter->isThrowawayDomain('example.org'));
+        $this->assertTrue($adapter->isThrowawayDomain('example.org'));
     }
 
-    public function testSecondInvalid()
+    public function testSecondInvalid(): void
     {
         $adapter1 = $this->getAdapterMock(false, 'once');
         $adapter2 = $this->getAdapterMock(true, 'once');
 
-        $this->adapter = new AgregatorAdapter([$adapter1, $adapter2]);
+        $adapter = new AgregatorAdapter([$adapter1, $adapter2]);
 
-        $this->assertTrue($this->adapter->isThrowawayDomain('example.org'));
-    }
-
-    public function testCheckArrayValuesInstanceOf()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-
-        new AgregatorAdapter([
-            new \stdClass(),
-            new \stdClass(),
-        ]);
+        $this->assertTrue($adapter->isThrowawayDomain('example.org'));
     }
 
     /**
@@ -64,7 +54,7 @@ class AgregatorAdapterTest extends TestCase
      *
      * @return AdapterInterface The mock adapter
      */
-    protected function getAdapterMock($isThrowawayDomain, $call = 'any')
+    protected function getAdapterMock(bool $isThrowawayDomain, string $call = 'any'): AdapterInterface
     {
         $adapter = $this->createMock(AdapterInterface::class);
         $adapter->expects($this->$call())
