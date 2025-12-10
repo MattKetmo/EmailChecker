@@ -12,8 +12,8 @@
 namespace EmailChecker\Laravel;
 
 use EmailChecker\EmailChecker;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * Laravel service provider.

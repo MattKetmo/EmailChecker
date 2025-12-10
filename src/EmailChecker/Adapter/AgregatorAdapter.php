@@ -29,18 +29,13 @@ class AgregatorAdapter implements AdapterInterface
     {
         foreach ($adapters as $adapter) {
             if (!$adapter instanceof AdapterInterface) {
-                throw new \InvalidArgumentException(
-                    'AgregatorAdapter only accept instances of AdapterInterface'
-                );
+                throw new \InvalidArgumentException('AgregatorAdapter only accept instances of AdapterInterface');
             }
         }
 
         $this->adapters = $adapters;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function isThrowawayDomain($domain)
     {
         foreach ($this->adapters as $adapter) {

@@ -28,9 +28,6 @@ class ArrayAdapter implements AdapterInterface
         $this->domains = $domains;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function isThrowawayDomain($domain)
     {
         return in_array($domain, $this->domains);

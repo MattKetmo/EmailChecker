@@ -34,9 +34,6 @@ class FileAdapter implements AdapterInterface
         $this->domains = Utilities::parseLines(file_get_contents($filename));
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function isThrowawayDomain($domain)
     {
         return in_array($domain, $this->domains);

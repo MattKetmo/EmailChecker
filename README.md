@@ -1,6 +1,5 @@
 # EmailChecker
 
-[![Build status...](https://img.shields.io/travis/MattKetmo/EmailChecker.svg)](http://travis-ci.org/MattKetmo/EmailChecker)
 [![Code quality...](https://img.shields.io/scrutinizer/g/MattKetmo/EmailChecker.svg)](https://scrutinizer-ci.com/g/MattKetmo/EmailChecker/)
 [![Downloads](https://img.shields.io/packagist/dt/mattketmo/email-checker.svg)](https://packagist.org/packages/mattketmo/email-checker)
 [![Packagist](http://img.shields.io/packagist/v/mattketmo/email-checker.svg)](https://packagist.org/packages/mattketmo/email-checker)
@@ -57,9 +56,9 @@ $checker->isValid('foo@baz.net'); // false
 You can build your own adapter (to use another database) simply by implementing
 the [AdapterInterface](src/EmailChecker/Adapter/AdapterInterface.php).
 
-## Integration with Symfony2
+## Integration with Symfony
 
-This library also provides a constraint validation for your Symfony2 project:
+This library also provides a constraint validation for your Symfony project:
 
 ```php
 <?php
@@ -69,17 +68,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class User
 {
-    /**
-     * @Assert\NotBlank
-     * @EmailCheckerAssert\NotThrowawayEmail
-     */
-    protected $email;
+    #[Assert\NotBlank] 
+    #[EmailCheckerAssert\NotThrowawayEmail] 
+    private string $email;
 }
 ```
 
-## Integration with Laravel 5
+## Integration with Laravel
 
-To integrate this library with your Laravel 5.x project add the following
+To integrate this library with your Laravel project add the following
 line to the `providers` key within your `config/app.php` file:
 
 ```php
