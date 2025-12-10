@@ -13,18 +13,18 @@ jobs:
             fail-fast: false
             matrix:
                 php-version:
-                    - '7.1'
-                    - '7.2'
-                    - '7.3'
-                    - '7.4'
                     - '8.0'
                     - '8.1'
                     - '8.2'
                     - '8.3'
                     - '8.4'
                     - '8.5'
+                dependencies: [highest]
+                include:
+                    - php-version: '8.0'
+                      dependencies: lowest
 
-        name: PHP ${{ matrix.php-version }}
+        name: PHP ${{ matrix.php-version }} ${{ matrix.dependencies }}
 
         steps:
             - name: Checkout code
@@ -36,8 +36,31 @@ jobs:
                   php-version: ${{ matrix.php-version }}
                   coverage: none
 
-            - name: Install dependencies
-              run: composer install --prefer-dist --no-progress --no-interaction
+            - name: Install Composer dependencies (${{ matrix.dependencies }})
+              uses: ramsey/composer-install@v3
+              with:
+                  dependency-versions: ${{ matrix.dependencies }}
 
             - name: Run tests
               run: composer test
+
+    lint:
+        runs-on: ubuntu-latest
+
+        name: PHP Cs Fixer
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v4
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: 8.5
+                    coverage: none
+
+            -   name: Install Composer dependencies
+                uses: ramsey/composer-install@v3
+
+            -   name: Run lint
+                run: composer lint

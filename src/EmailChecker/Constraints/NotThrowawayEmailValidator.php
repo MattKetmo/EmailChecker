@@ -11,7 +11,6 @@
 
 namespace EmailChecker\Constraints;
 
-use EmailChecker\Adapter\BuiltInAdapter;
 use EmailChecker\EmailChecker;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
@@ -24,17 +23,11 @@ class NotThrowawayEmailValidator extends ConstraintValidator
 {
     protected $emailChecker;
 
-    /**
-     * @param EmailChecker $emailChecker
-     */
     public function __construct(?EmailChecker $emailChecker = null)
     {
         $this->emailChecker = $emailChecker ?: new EmailChecker();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function validate($value, Constraint $constraint)
     {
         if (null === $value || '' === $value) {
