@@ -18,6 +18,7 @@ jobs:
                     - '8.2'
                     - '8.3'
                     - '8.4'
+                    - '8.5'
                 dependencies: [highest]
                 symfony-require: ['']
                 include:
@@ -28,12 +29,13 @@ jobs:
                     - php-version: '8.2'
                       symfony-require: '6.4.*'
                     - php-version: '8.3'
-                      symfony-require: '7.2.*'
+                      symfony-require: '7.3.*'
+                    - php-version: '8.3'
+                      symfony-require: '7.4.*'
                     - php-version: '8.4'
                       symfony-require: '8.0.*'
-                      stability: dev
 
-        name: PHP ${{ matrix.php-version }} ${{ matrix.symfony-require && format('/ Symfony {0}', matrix.symfony-require) || '' }} ${{ matrix.dependencies == 'lowest' && '/ lowest' || '' }}
+        name: PHP ${{ matrix.php-version }} ${{ matrix.dependencies }} ${{ matrix.symfony-require && format('/ Symfony {0}', matrix.symfony-require) || '' }}
 
         env:
             SYMFONY_REQUIRE: ${{ matrix.symfony-require }}
@@ -48,10 +50,6 @@ jobs:
                   php-version: ${{ matrix.php-version }}
                   tools: composer:v2, flex
                   coverage: none
-
-            - name: Allow dev stability
-              if: matrix.stability == 'dev'
-              run: composer config minimum-stability dev
 
             - name: Install Composer dependencies
               uses: ramsey/composer-install@v3
