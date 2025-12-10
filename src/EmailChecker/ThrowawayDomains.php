@@ -11,8 +11,10 @@
 
 namespace EmailChecker;
 
+use Fgribreau\MailChecker;
+
 /**
- * List of built-in throwaway domains read from the resources folder.
+ * List of built-in throwaway domains coming from fgribreau/mailchecker.
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  *
@@ -27,12 +29,7 @@ class ThrowawayDomains implements \IteratorAggregate, \Countable
 
     public function __construct()
     {
-        $content = file_get_contents(__DIR__.'/../../res/throwaway_domains.txt');
-        if (false === $content) {
-            throw new \LogicException('File "throwaway_domains.txt" not found');
-        }
-
-        $this->domains = Utilities::parseLines($content);
+        $this->domains = MailChecker::blacklist();
     }
 
     /**
