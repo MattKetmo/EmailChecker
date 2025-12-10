@@ -32,8 +32,6 @@ jobs:
                       symfony-require: '7.3.*'
                     - php-version: '8.2'
                       symfony-require: '7.4.*'
-                    - php-version: '8.4'
-                      symfony-require: '8.0.*'
 
         name: PHP ${{ matrix.php-version }} ${{ matrix.dependencies }} ${{ matrix.symfony-require && format('/ Symfony {0}', matrix.symfony-require) || '' }}
 
