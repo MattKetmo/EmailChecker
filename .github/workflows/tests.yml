@@ -18,13 +18,25 @@ jobs:
                     - '8.2'
                     - '8.3'
                     - '8.4'
-                    - '8.5'
                 dependencies: [highest]
+                symfony-require: ['']
                 include:
                     - php-version: '8.0'
                       dependencies: lowest
+                    - php-version: '8.1'
+                      symfony-require: '5.4.*'
+                    - php-version: '8.2'
+                      symfony-require: '6.4.*'
+                    - php-version: '8.3'
+                      symfony-require: '7.2.*'
+                    - php-version: '8.4'
+                      symfony-require: '8.0.*'
+                      stability: dev
 
-        name: PHP ${{ matrix.php-version }} ${{ matrix.dependencies }}
+        name: PHP ${{ matrix.php-version }} ${{ matrix.symfony-require && format('/ Symfony {0}', matrix.symfony-require) || '' }} ${{ matrix.dependencies == 'lowest' && '/ lowest' || '' }}
+
+        env:
+            SYMFONY_REQUIRE: ${{ matrix.symfony-require }}
 
         steps:
             - name: Checkout code
@@ -34,9 +46,14 @@ jobs:
               uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ matrix.php-version }}
+                  tools: composer:v2, flex
                   coverage: none
 
-            - name: Install Composer dependencies (${{ matrix.dependencies }})
+            - name: Allow dev stability
+              if: matrix.stability == 'dev'
+              run: composer config minimum-stability dev
+
+            - name: Install Composer dependencies
               uses: ramsey/composer-install@v3
               with:
                   dependency-versions: ${{ matrix.dependencies }}
