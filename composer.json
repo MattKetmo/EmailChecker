@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "fgribreau/mailchecker": "^6.0"
+        "fgribreau/mailchecker": "^6.0.16"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.91",

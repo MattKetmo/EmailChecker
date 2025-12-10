@@ -11,7 +11,6 @@
 
 namespace EmailChecker\Adapter;
 
-use EmailChecker\ThrowawayDomains;
 use Fgribreau\MailChecker;
 
 /**
@@ -25,26 +24,9 @@ use Fgribreau\MailChecker;
  */
 class BuiltInAdapter implements AdapterInterface
 {
-    /**
-     * @var string[]|null
-     */
-    protected $domains = null;
-
     public function isThrowawayDomain($domain)
     {
         // MailChecker::isBlackListed works with the whole email.
         return MailChecker::isBlacklisted('foo@'.$domain);
-    }
-
-    /**
-     * @return string[]
-     */
-    private function getDomains()
-    {
-        if (null === $this->domains) {
-            $this->domains = (new ThrowawayDomains())->toArray();
-        }
-
-        return $this->domains;
     }
 }
