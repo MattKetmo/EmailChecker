@@ -17,9 +17,9 @@ use Gaufrette\Adapter\Local as LocalAdapter;
 use Gaufrette\File;
 use Gaufrette\Filesystem;
 
-class GaufretteAdapterTest extends TestCase
+final class GaufretteAdapterTest extends TestCase
 {
-    protected $adapter;
+    private GaufretteAdapter $adapter;
 
     protected function setUp(): void
     {
@@ -34,7 +34,7 @@ class GaufretteAdapterTest extends TestCase
     /**
      * @dataProvider throwawayDomains
      */
-    public function testThrowawayDomains($domain)
+    public function testThrowawayDomains(string $domain): void
     {
         $this->assertTrue($this->adapter->isThrowawayDomain($domain));
     }
@@ -42,12 +42,12 @@ class GaufretteAdapterTest extends TestCase
     /**
      * @dataProvider notThrowawayDomains
      */
-    public function testNotThrowawayDomains($domain)
+    public function testNotThrowawayDomains(string $domain): void
     {
         $this->assertFalse($this->adapter->isThrowawayDomain($domain));
     }
 
-    public static function throwawayDomains()
+    public static function throwawayDomains(): iterable
     {
         return [
             ['jetable.org'],
@@ -57,7 +57,7 @@ class GaufretteAdapterTest extends TestCase
         ];
     }
 
-    public static function notThrowawayDomains()
+    public static function notThrowawayDomains(): iterable
     {
         return [
             ['gmail.com'],

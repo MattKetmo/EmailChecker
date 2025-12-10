@@ -17,7 +17,9 @@
         "illuminate/support": "^9.0 || ^10.0 || ^11.0 || ^12.0",
         "knplabs/gaufrette": "^0.11",
         "phpunit/phpunit": "^9.5",
-        "symfony/validator": "^5.4 || ^6.4 || ^7.0"
+        "symfony/validator": "^5.4 || ^6.4 || ^7.0",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-phpunit": "^2.0"
     },
     "suggest": {
         "symfony/validator": "Add validation constraints",
@@ -49,6 +51,9 @@
         ],
         "lint": [
             "php-cs-fixer fix --ansi"
+        ],
+        "phpstan": [
+            "phpstan analyse"
         ]
     }
 }

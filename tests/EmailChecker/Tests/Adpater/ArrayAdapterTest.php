@@ -14,26 +14,26 @@ namespace EmailChecker\Tests\Adpater;
 use EmailChecker\Adapter\ArrayAdapter;
 use EmailChecker\Tests\TestCase;
 
-class ArrayAdapterTest extends TestCase
+final class ArrayAdapterTest extends TestCase
 {
-    protected static $throawayDomains = [
+    private const DOMAINS = [
         'jetable.org',
         'mailjet.org',
     ];
 
-    protected $adapter;
+    private ArrayAdapter $adapter;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->adapter = new ArrayAdapter(self::$throawayDomains);
+        $this->adapter = new ArrayAdapter(self::DOMAINS);
     }
 
     /**
      * @dataProvider throwawayDomains
      */
-    public function testThrowawayDomains($domain)
+    public function testThrowawayDomains(string $domain): void
     {
         $this->assertTrue($this->adapter->isThrowawayDomain($domain));
     }
@@ -41,12 +41,12 @@ class ArrayAdapterTest extends TestCase
     /**
      * @dataProvider notThrowawayDomains
      */
-    public function testNotThrowawayDomains($domain)
+    public function testNotThrowawayDomains(string $domain): void
     {
         $this->assertFalse($this->adapter->isThrowawayDomain($domain));
     }
 
-    public static function throwawayDomains()
+    public static function throwawayDomains(): iterable
     {
         return [
             ['jetable.org'],
@@ -54,7 +54,7 @@ class ArrayAdapterTest extends TestCase
         ];
     }
 
-    public static function notThrowawayDomains()
+    public static function notThrowawayDomains(): iterable
     {
         return [
             ['gmail.com'],

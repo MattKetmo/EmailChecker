@@ -18,10 +18,13 @@ namespace EmailChecker\Adapter;
  */
 class ArrayAdapter implements AdapterInterface
 {
+    /**
+     * @var string[]
+     */
     protected $domains;
 
     /**
-     * @param array $domains List of throwaway domains
+     * @param string[] $domains List of throwaway domains
      */
     public function __construct(array $domains)
     {

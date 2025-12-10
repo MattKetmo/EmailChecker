@@ -64,3 +64,24 @@ jobs:
 
             -   name: Run lint
                 run: composer lint
+
+    phpstan:
+        runs-on: ubuntu-latest
+
+        name: PHPStan
+
+        steps:
+            -   name: Checkout code
+                uses: actions/checkout@v4
+
+            -   name: Setup PHP
+                uses: shivammathur/setup-php@v2
+                with:
+                    php-version: 8.5
+                    coverage: none
+
+            -   name: Install Composer dependencies
+                uses: ramsey/composer-install@v3
+
+            -   name: Run phpstan
+                run: composer phpstan

@@ -13,13 +13,12 @@ namespace EmailChecker\Tests;
 
 use EmailChecker\ThrowawayDomains;
 
-class ThrowawayDomainsTest extends TestCase
+final class ThrowawayDomainsTest extends TestCase
 {
-    public function testIsInstanciable()
+    public function testIsInstanciable(): void
     {
         $domains = new ThrowawayDomains();
 
-        $this->assertTrue(is_array($domains->toArray()));
         $this->assertGreaterThan(0, count($domains));
     }
 }

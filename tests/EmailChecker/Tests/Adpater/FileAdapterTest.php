@@ -14,9 +14,9 @@ namespace EmailChecker\Tests\Adpater;
 use EmailChecker\Adapter\FileAdapter;
 use EmailChecker\Tests\TestCase;
 
-class FileAdapterTest extends TestCase
+final class FileAdapterTest extends TestCase
 {
-    protected $adapter;
+    private FileAdapter $adapter;
 
     protected function setUp(): void
     {
@@ -28,7 +28,7 @@ class FileAdapterTest extends TestCase
     /**
      * @dataProvider throwawayDomains
      */
-    public function testThrowawayDomains($domain)
+    public function testThrowawayDomains(string $domain): void
     {
         $this->assertTrue($this->adapter->isThrowawayDomain($domain));
     }
@@ -36,12 +36,12 @@ class FileAdapterTest extends TestCase
     /**
      * @dataProvider notThrowawayDomains
      */
-    public function testNotThrowawayDomains($domain)
+    public function testNotThrowawayDomains(string $domain): void
     {
         $this->assertFalse($this->adapter->isThrowawayDomain($domain));
     }
 
-    public static function throwawayDomains()
+    public static function throwawayDomains(): iterable
     {
         return [
             ['jetable.org'],
@@ -51,7 +51,7 @@ class FileAdapterTest extends TestCase
         ];
     }
 
-    public static function notThrowawayDomains()
+    public static function notThrowawayDomains(): iterable
     {
         return [
             ['gmail.com'],

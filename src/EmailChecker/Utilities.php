@@ -28,14 +28,10 @@ class Utilities
      *
      * @param string $email The email address to parse
      *
-     * @return array The parts of the email. First the local part, then the domain
+     * @return array{string, string} The parts of the email. First the local part, then the domain
      */
     public static function parseEmailAddress($email)
     {
-        if (!is_string($email)) {
-            throw new InvalidEmailException(sprintf('Expected a string, received %s', gettype($email)));
-        }
-
         $pattern = sprintf('/^(?<local>%s)@(?<domain>%s)$/iD', self::EMAIL_REGEX_LOCAL, self::EMAIL_REGEX_DOMAIN);
 
         if (!preg_match($pattern, $email, $parts)) {
@@ -50,7 +46,7 @@ class Utilities
      *
      * @param string $content The content to parse
      *
-     * @return array Array of cleaned string
+     * @return array<string> Array of cleaned string
      */
     public static function parseLines($content)
     {
@@ -62,10 +58,9 @@ class Utilities
         $lines = array_map('strtolower', $lines);
 
         // Remove empty lines and comments
-        $lines = array_filter($lines, function ($line) {
-            return (0 === strlen($line) || '#' === $line[0]) ? false : $line;
-        });
-
-        return $lines;
+        return array_filter(
+            $lines,
+            static fn (string $line): bool => 0 !== strlen($line) && '#' !== $line[0],
+        );
     }
 }

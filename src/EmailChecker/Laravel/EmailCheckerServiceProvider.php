@@ -22,10 +22,10 @@ use Illuminate\Support\ServiceProvider;
  */
 class EmailCheckerServiceProvider extends ServiceProvider
 {
-    protected $app;
-
     /**
      * Register the factory in the application container.
+     *
+     * @return void
      */
     public function register()
     {
@@ -44,6 +44,8 @@ class EmailCheckerServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
+     *
+     * @return void
      */
     public function boot(EmailChecker $checker)
     {
@@ -62,7 +64,7 @@ class EmailCheckerServiceProvider extends ServiceProvider
     /**
      * Get the services provided by the provider.
      *
-     * @return array
+     * @return array<string>
      */
     public function provides()
     {

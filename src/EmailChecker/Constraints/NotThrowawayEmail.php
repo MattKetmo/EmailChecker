@@ -21,6 +21,9 @@ use Symfony\Component\Validator\Constraint;
 #[\Attribute]
 class NotThrowawayEmail extends Constraint
 {
+    /**
+     * @var string
+     */
     public $message = 'The domain associated with this email is not valid.';
 
     public function __construct(

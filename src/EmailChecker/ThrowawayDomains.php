@@ -15,18 +15,29 @@ namespace EmailChecker;
  * List of built-in throwaway domains read from the resources folder.
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
+ *
+ * @implements \IteratorAggregate<string>
  */
 class ThrowawayDomains implements \IteratorAggregate, \Countable
 {
+    /**
+     * @var string[]
+     */
     protected $domains;
 
     public function __construct()
     {
-        $this->domains = Utilities::parseLines(file_get_contents(
-            __DIR__.'/../../res/throwaway_domains.txt'
-        ));
+        $content = file_get_contents(__DIR__.'/../../res/throwaway_domains.txt');
+        if (false === $content) {
+            throw new \LogicException('File "throwaway_domains.txt" not found');
+        }
+
+        $this->domains = Utilities::parseLines($content);
     }
 
+    /**
+     * @return string[]
+     */
     public function toArray()
     {
         return $this->domains;

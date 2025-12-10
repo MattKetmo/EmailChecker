@@ -21,6 +21,9 @@ use Gaufrette\File;
  */
 class GaufretteAdapter implements AdapterInterface
 {
+    /**
+     * @var string[]
+     */
     protected $domains;
 
     public function __construct(File $file)
