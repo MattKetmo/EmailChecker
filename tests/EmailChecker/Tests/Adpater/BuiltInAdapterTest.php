@@ -30,7 +30,7 @@ final class BuiltInAdapterTest extends TestCase
      */
     public function testThrowawayDomains(string $domain): void
     {
-        $this->assertTrue($this->adapter->isThrowawayDomain($domain));
+        self::assertTrue($this->adapter->isThrowawayDomain($domain));
     }
 
     public static function throwawayDomains(): iterable

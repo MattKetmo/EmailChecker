@@ -32,7 +32,7 @@ class BuiltInAdapter implements AdapterInterface
 
     public function isThrowawayDomain($domain)
     {
-        return in_array($domain, $this->getDomains());
+        return in_array($domain, $this->getDomains(), true);
     }
 
     /**

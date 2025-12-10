@@ -19,6 +19,6 @@ final class ThrowawayDomainsTest extends TestCase
     {
         $domains = new ThrowawayDomains();
 
-        $this->assertGreaterThan(0, count($domains));
+        self::assertGreaterThan(0, count($domains));
     }
 }

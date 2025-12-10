@@ -34,7 +34,7 @@ class Utilities
     {
         $pattern = sprintf('/^(?<local>%s)@(?<domain>%s)$/iD', self::EMAIL_REGEX_LOCAL, self::EMAIL_REGEX_DOMAIN);
 
-        if (!preg_match($pattern, $email, $parts)) {
+        if (1 !== preg_match($pattern, $email, $parts)) {
             throw new InvalidEmailException(sprintf('"%s" is not a valid email', $email));
         }
 
@@ -60,7 +60,7 @@ class Utilities
         // Remove empty lines and comments
         return array_filter(
             $lines,
-            static fn (string $line): bool => 0 !== strlen($line) && '#' !== $line[0],
+            static fn (string $line): bool => $line !== '' && '#' !== $line[0],
         );
     }
 }

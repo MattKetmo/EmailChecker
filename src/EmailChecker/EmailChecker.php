@@ -49,7 +49,7 @@ class EmailChecker
         }
 
         try {
-            list($local, $domain) = Utilities::parseEmailAddress($email);
+            [$local, $domain] = Utilities::parseEmailAddress($email);
         } catch (InvalidEmailException $e) {
             return false;
         }

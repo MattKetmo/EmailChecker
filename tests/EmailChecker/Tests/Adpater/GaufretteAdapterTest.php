@@ -36,7 +36,7 @@ final class GaufretteAdapterTest extends TestCase
      */
     public function testThrowawayDomains(string $domain): void
     {
-        $this->assertTrue($this->adapter->isThrowawayDomain($domain));
+        self::assertTrue($this->adapter->isThrowawayDomain($domain));
     }
 
     /**
@@ -44,7 +44,7 @@ final class GaufretteAdapterTest extends TestCase
      */
     public function testNotThrowawayDomains(string $domain): void
     {
-        $this->assertFalse($this->adapter->isThrowawayDomain($domain));
+        self::assertFalse($this->adapter->isThrowawayDomain($domain));
     }
 
     public static function throwawayDomains(): iterable
