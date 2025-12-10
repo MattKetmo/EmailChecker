@@ -35,6 +35,7 @@ final class UtilitiesTest extends TestCase
             Utilities::parseEmailAddress($email);
             self::fail(sprintf('"%s" should not be a valid email', $email));
         } catch (InvalidEmailException $e) {
+            $this->expectNotToPerformAssertions();
             return;
         }
     }
