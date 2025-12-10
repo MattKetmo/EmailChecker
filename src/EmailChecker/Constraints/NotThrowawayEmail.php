@@ -26,6 +26,9 @@ class NotThrowawayEmail extends Constraint
      */
     public $message = 'The domain associated with this email is not valid.';
 
+    /**
+     * @param array<string, mixed>|string|null $message
+     */
     public function __construct(
         array|string|null $message = null,
         ?array $groups = null,
