@@ -35,7 +35,7 @@ final class NotThrowawayEmailValidatorTest extends TestCase
 
     public function testNullIsValid(): void
     {
-        $this->context->expects($this->never())
+        $this->context->expects(self::never())
             ->method('addViolation');
 
         $this->validator->validate(null, new NotThrowawayEmail());
@@ -43,7 +43,7 @@ final class NotThrowawayEmailValidatorTest extends TestCase
 
     public function testEmptyStringIsValid(): void
     {
-        $this->context->expects($this->never())
+        $this->context->expects(self::never())
             ->method('addViolation');
 
         $this->validator->validate('', new NotThrowawayEmail());
@@ -61,7 +61,7 @@ final class NotThrowawayEmailValidatorTest extends TestCase
      */
     public function testValidEmails(string $email): void
     {
-        $this->context->expects($this->never())
+        $this->context->expects(self::never())
             ->method('addViolation');
 
         $this->validator->validate($email, new NotThrowawayEmail());
@@ -84,7 +84,7 @@ final class NotThrowawayEmailValidatorTest extends TestCase
             'message' => 'myMessage',
         ]);
 
-        $this->context->expects($this->once())
+        $this->context->expects(self::once())
             ->method('addViolation')
             ->with('myMessage');
 

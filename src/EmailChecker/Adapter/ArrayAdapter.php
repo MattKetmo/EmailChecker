@@ -33,6 +33,6 @@ class ArrayAdapter implements AdapterInterface
 
     public function isThrowawayDomain($domain)
     {
-        return in_array($domain, $this->domains);
+        return in_array($domain, $this->domains, true);
     }
 }

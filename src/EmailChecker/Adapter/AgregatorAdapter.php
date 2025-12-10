@@ -15,32 +15,19 @@ namespace EmailChecker\Adapter;
  * Combine data from other adapters.
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
+ *
+ * @deprecated Use \EmailChecker\Adapter\AggregatorAdapter instead.
  */
-class AgregatorAdapter implements AdapterInterface
+class AgregatorAdapter extends AggregatorAdapter
 {
-    /**
-     * @var AdapterInterface[]
-     */
-    protected $adapters;
-
-    /**
-     * Build aggregator adapter with a list of adapters (order matters).
-     *
-     * @param AdapterInterface[] $adapters List of AdapterInterface objects
-     */
     public function __construct(array $adapters)
     {
-        $this->adapters = $adapters;
-    }
+        parent::__construct($adapters);
 
-    public function isThrowawayDomain($domain)
-    {
-        foreach ($this->adapters as $adapter) {
-            if ($adapter->isThrowawayDomain($domain)) {
-                return true;
-            }
-        }
-
-        return false;
+        trigger_error(\sprintf(
+            'Since mattketmo/email-checker 2.5.0: Class "%s" is deprecated, use "%s" instead.',
+            self::class,
+            AggregatorAdapter::class,
+        ), \E_USER_DEPRECATED);
     }
 }

@@ -25,7 +25,7 @@ final class EmailCheckerTest extends TestCase
 
         $checker = new EmailChecker($adapter);
 
-        $this->assertTrue($checker->isValid('foo@bar.org'));
+        self::assertTrue($checker->isValid('foo@bar.org'));
     }
 
     public function testEmailIsNotValid(): void
@@ -37,7 +37,7 @@ final class EmailCheckerTest extends TestCase
 
         $checker = new EmailChecker($adapter);
 
-        $this->assertFalse($checker->isValid('foo@bar.org'));
+        self::assertFalse($checker->isValid('foo@bar.org'));
     }
 
     public function testMalformattedEmail(): void
@@ -45,6 +45,6 @@ final class EmailCheckerTest extends TestCase
         $adapter = $this->createMock(AdapterInterface::class);
         $checker = new EmailChecker($adapter);
 
-        $this->assertFalse($checker->isValid('foo[at]bar.org'));
+        self::assertFalse($checker->isValid('foo[at]bar.org'));
     }
 }

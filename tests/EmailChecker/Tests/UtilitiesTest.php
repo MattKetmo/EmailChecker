@@ -21,9 +21,9 @@ final class UtilitiesTest extends TestCase
      */
     public function testParseValidEmail(string $email, string $exceptedLocal, string $exceptedDomain): void
     {
-        list($local, $domain) = Utilities::parseEmailAddress($email);
+        [$local, $domain] = Utilities::parseEmailAddress($email);
 
-        $this->assertEquals([$exceptedLocal, $exceptedDomain], [$local, $domain]);
+        self::assertEquals([$exceptedLocal, $exceptedDomain], [$local, $domain]);
     }
 
     /**
@@ -33,7 +33,7 @@ final class UtilitiesTest extends TestCase
     {
         try {
             Utilities::parseEmailAddress($email);
-            $this->fail(sprintf('"%s" should not be a valid email', $email));
+            self::fail(sprintf('"%s" should not be a valid email', $email));
         } catch (InvalidEmailException $e) {
             return;
         }
@@ -65,7 +65,7 @@ Expected:
 Actual:
 %s
 MSG;
-        $this->assertEmpty($diffs, sprintf($message, print_r($expectedLines, true), print_r($parsedContent, true)));
+        self::assertEmpty($diffs, sprintf($message, print_r($expectedLines, true), print_r($parsedContent, true)));
     }
 
     public static function validEmails(): iterable

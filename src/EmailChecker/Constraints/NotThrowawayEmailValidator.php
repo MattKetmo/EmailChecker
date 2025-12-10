@@ -28,7 +28,7 @@ class NotThrowawayEmailValidator extends ConstraintValidator
 
     public function __construct(?EmailChecker $emailChecker = null)
     {
-        $this->emailChecker = $emailChecker ?: new EmailChecker();
+        $this->emailChecker = $emailChecker ?? new EmailChecker();
     }
 
     /**
