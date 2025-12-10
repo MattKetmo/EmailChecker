@@ -116,6 +116,12 @@
 9mail.cf
 9me.site
 9ox.net
+Disposableemailaddresses:emailmiser.com
+PutThisInYourSpamDatabase.com
+SendSpamHere.com
+SpamHereLots.com
+SpamHerePlease.com
+TempEMail.net
 a-bc.net
 a.mailcker.com
 a.vztc.com
@@ -527,6 +533,7 @@ divermail.com
 divismail.ru
 dlemail.ru
 dm.w3internet.co.uk
+dm.w3internet.co.ukexample.com
 dndent.com
 dnses.ro
 dob.jp
