@@ -11,17 +11,14 @@
 
 namespace EmailChecker;
 
-use EmailChecker\Adapter\AggregatorAdapter;
 use Fgribreau\MailChecker;
 
 /**
- * List of built-in throwaway domains read from the resources folder.
+ * List of built-in throwaway domains coming from fgribreau/mailchecker.
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  *
  * @implements \IteratorAggregate<string>
- *
- * @deprecated
  */
 class ThrowawayDomains implements \IteratorAggregate, \Countable
 {
@@ -32,17 +29,7 @@ class ThrowawayDomains implements \IteratorAggregate, \Countable
 
     public function __construct()
     {
-        $content = file_get_contents(__DIR__.'/../../res/throwaway_domains.txt');
-        if (false === $content) {
-            throw new \LogicException('File "throwaway_domains.txt" not found');
-        }
-
-        trigger_error(\sprintf(
-            'Since mattketmo/email-checker 2.5.0: Class "%s" is deprecated.',
-            self::class,
-        ), \E_USER_DEPRECATED);
-
-        $this->domains = Utilities::parseLines($content);
+        $this->domains = MailChecker::blacklist();
     }
 
     /**
