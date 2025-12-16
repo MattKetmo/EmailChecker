@@ -25,5 +25,5 @@ interface AdapterInterface
      *
      * @return bool True for a throwaway domain
      */
-    public function isThrowawayDomain($domain);
+    public function isThrowawayDomain(string $domain): bool;
 }

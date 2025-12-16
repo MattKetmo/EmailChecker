@@ -20,14 +20,12 @@ use Illuminate\Support\ServiceProvider;
  *
  * @author Oliver Green <dubious@codeblog.co.uk>
  */
-class EmailCheckerServiceProvider extends ServiceProvider
+final class EmailCheckerServiceProvider extends ServiceProvider
 {
     /**
      * Register the factory in the application container.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         /*
          * Register the e-mail checker
@@ -44,10 +42,8 @@ class EmailCheckerServiceProvider extends ServiceProvider
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot(EmailChecker $checker)
+    public function boot(EmailChecker $checker): void
     {
         /*
          * Add a custom validator filter.
@@ -66,7 +62,7 @@ class EmailCheckerServiceProvider extends ServiceProvider
      *
      * @return array<string>
      */
-    public function provides()
+    public function provides(): array
     {
         return ['email.checker', EmailChecker::class];
     }

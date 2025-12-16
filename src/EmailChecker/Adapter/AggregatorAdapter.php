@@ -16,24 +16,18 @@ namespace EmailChecker\Adapter;
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-class AggregatorAdapter implements AdapterInterface
+final class AggregatorAdapter implements AdapterInterface
 {
-    /**
-     * @var AdapterInterface[]
-     */
-    protected $adapters;
-
     /**
      * Build aggregator adapter with a list of adapters (order matters).
      *
      * @param AdapterInterface[] $adapters List of AdapterInterface objects
      */
-    public function __construct(array $adapters)
+    public function __construct(private array $adapters)
     {
-        $this->adapters = $adapters;
     }
 
-    public function isThrowawayDomain($domain)
+    public function isThrowawayDomain(string $domain): bool
     {
         foreach ($this->adapters as $adapter) {
             if ($adapter->isThrowawayDomain($domain)) {

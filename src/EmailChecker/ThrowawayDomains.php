@@ -18,12 +18,12 @@ namespace EmailChecker;
  *
  * @implements \IteratorAggregate<string>
  */
-class ThrowawayDomains implements \IteratorAggregate, \Countable
+final class ThrowawayDomains implements \IteratorAggregate, \Countable
 {
     /**
      * @var string[]
      */
-    protected $domains;
+    private array $domains;
 
     public function __construct()
     {
@@ -38,7 +38,7 @@ class ThrowawayDomains implements \IteratorAggregate, \Countable
     /**
      * @return string[]
      */
-    public function toArray()
+    public function toArray(): array
     {
         return $this->domains;
     }

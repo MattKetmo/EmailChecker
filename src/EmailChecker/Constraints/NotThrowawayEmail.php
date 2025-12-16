@@ -19,7 +19,7 @@ use Symfony\Component\Validator\Constraint;
  * @Annotation
  */
 #[\Attribute]
-class NotThrowawayEmail extends Constraint
+final class NotThrowawayEmail extends Constraint
 {
     /**
      * @var string
@@ -27,12 +27,11 @@ class NotThrowawayEmail extends Constraint
     public $message = 'The domain associated with this email is not valid.';
 
     public function __construct(
-        $options = null,
-        ?array $groups = null,
-        $payload = null,
         ?string $message = null,
+        ?array $groups = null,
+        mixed $payload = null,
     ) {
-        parent::__construct($options, $groups, $payload);
+        parent::__construct(null, $groups, $payload);
 
         $this->message = $message ?? $this->message;
     }

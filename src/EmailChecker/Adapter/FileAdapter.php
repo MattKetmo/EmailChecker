@@ -18,17 +18,17 @@ use EmailChecker\Utilities;
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-class FileAdapter implements AdapterInterface
+final class FileAdapter implements AdapterInterface
 {
     /**
      * @var string[]
      */
-    protected $domains;
+    protected array $domains;
 
     /**
      * @param string $filename Filename containing all domains
      */
-    public function __construct($filename)
+    public function __construct(string $filename)
     {
         $content = file_get_contents($filename);
         if (false === $content) {
@@ -38,7 +38,7 @@ class FileAdapter implements AdapterInterface
         $this->domains = Utilities::parseLines($content);
     }
 
-    public function isThrowawayDomain($domain)
+    public function isThrowawayDomain(string $domain): bool
     {
         return in_array($domain, $this->domains, true);
     }
