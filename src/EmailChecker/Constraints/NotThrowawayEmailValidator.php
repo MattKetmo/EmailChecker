@@ -12,7 +12,6 @@
 namespace EmailChecker\Constraints;
 
 use EmailChecker\EmailChecker;
-use ReturnTypeWillChange;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintValidator;
 use Symfony\Component\Validator\Exception\UnexpectedTypeException;
@@ -20,25 +19,16 @@ use Symfony\Component\Validator\Exception\UnexpectedTypeException;
 /**
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-class NotThrowawayEmailValidator extends ConstraintValidator
+final class NotThrowawayEmailValidator extends ConstraintValidator
 {
-    /**
-     * @var EmailChecker
-     */
-    protected $emailChecker;
+    private EmailChecker $emailChecker;
 
     public function __construct(?EmailChecker $emailChecker = null)
     {
         $this->emailChecker = $emailChecker ?? new EmailChecker();
     }
 
-    /**
-     * @param mixed $value
-     *
-     * @return void
-     */
-    #[ReturnTypeWillChange]
-    public function validate($value, Constraint $constraint)
+    public function validate(mixed $value, Constraint $constraint): void
     {
         if (!$constraint instanceof NotThrowawayEmail) {
             throw new UnexpectedTypeException($constraint, NotThrowawayEmail::class);

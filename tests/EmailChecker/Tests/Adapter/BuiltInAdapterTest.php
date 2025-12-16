@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace EmailChecker\Tests\Adpater;
+namespace EmailChecker\Tests\Adapter;
 
 use EmailChecker\Adapter\BuiltInAdapter;
 use EmailChecker\Tests\TestCase;

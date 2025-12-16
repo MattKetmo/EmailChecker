@@ -80,9 +80,7 @@ final class NotThrowawayEmailValidatorTest extends TestCase
      */
     public function testInvalidEmails(string $email): void
     {
-        $constraint = new NotThrowawayEmail([
-            'message' => 'myMessage',
-        ]);
+        $constraint = new NotThrowawayEmail(message: 'myMessage');
 
         $this->context->expects(self::once())
             ->method('addViolation')

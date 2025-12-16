@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Facade;
  *
  * @author Oliver Green <dubious@codeblog.co.uk>
  */
-class EmailCheckerFacade extends Facade
+final class EmailCheckerFacade extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -20,15 +20,12 @@ use EmailChecker\Exception\InvalidEmailException;
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-class EmailChecker
+final class EmailChecker
 {
-    /**
-     * @var AdapterInterface
-     */
-    protected $adapter;
+    private AdapterInterface $adapter;
 
     /**
-     * @param AdapterInterface $adapter Checker adapter
+     * @param AdapterInterface|null $adapter Checker adapter
      */
     public function __construct(?AdapterInterface $adapter = null)
     {
@@ -42,7 +39,7 @@ class EmailChecker
      *
      * @return bool true for a throwaway email
      */
-    public function isValid($email)
+    public function isValid(string $email): bool
     {
         if (false === $email = filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return false;
