@@ -16,10 +16,9 @@ use EmailChecker\ThrowawayDomains;
 /**
  * Built-in adapter.
  *
- * This adapter provides a list of throwaway domains included in that library.
- * Initially, those domains come from FGRibreau/mailchecker library.
+ * This adapter provides a list of throwaway domains coming from fgribreau/mailchecker library.
  *
- * @see https://github.com/FGRibreau/mailchecker/blob/master/list.json
+ * @see https://github.com/FGRibreau/mailchecker/blob/master/list.txt
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
