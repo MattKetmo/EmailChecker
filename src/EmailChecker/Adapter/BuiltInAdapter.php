@@ -23,27 +23,10 @@ use EmailChecker\ThrowawayDomains;
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-final class BuiltInAdapter implements AdapterInterface
+final class BuiltInAdapter extends ArrayAdapter
 {
-    /**
-     * @var string[]|null
-     */
-    protected array|null $domains = null;
-
-    public function isThrowawayDomain(string $domain): bool
+    public function __construct()
     {
-        return in_array($domain, $this->getDomains(), true);
-    }
-
-    /**
-     * @return string[]
-     */
-    private function getDomains(): array
-    {
-        if (null === $this->domains) {
-            $this->domains = (new ThrowawayDomains())->toArray();
-        }
-
-        return $this->domains;
+        parent::__construct((new ThrowawayDomains())->toArray());
     }
 }

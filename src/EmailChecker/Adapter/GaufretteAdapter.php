@@ -19,20 +19,10 @@ use Gaufrette\File;
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-final class GaufretteAdapter implements AdapterInterface
+final class GaufretteAdapter extends ArrayAdapter
 {
-    /**
-     * @var string[]
-     */
-    private array $domains;
-
     public function __construct(File $file)
     {
-        $this->domains = Utilities::parseLines($file->getContent());
-    }
-
-    public function isThrowawayDomain(string $domain): bool
-    {
-        return in_array($domain, $this->domains, true);
+        parent::__construct(Utilities::parseLines($file->getContent()));
     }
 }

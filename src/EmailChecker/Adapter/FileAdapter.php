@@ -18,13 +18,8 @@ use EmailChecker\Utilities;
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-final class FileAdapter implements AdapterInterface
+final class FileAdapter extends ArrayAdapter
 {
-    /**
-     * @var string[]
-     */
-    protected array $domains;
-
     /**
      * @param string $filename Filename containing all domains
      */
@@ -35,11 +30,6 @@ final class FileAdapter implements AdapterInterface
             throw new \InvalidArgumentException(sprintf('File "%s" not found', $filename));
         }
 
-        $this->domains = Utilities::parseLines($content);
-    }
-
-    public function isThrowawayDomain(string $domain): bool
-    {
-        return in_array($domain, $this->domains, true);
+        parent::__construct(Utilities::parseLines($content));
     }
 }

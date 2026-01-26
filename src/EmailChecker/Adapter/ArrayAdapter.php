@@ -16,17 +16,23 @@ namespace EmailChecker\Adapter;
  *
  * @author Matthieu Moquet <matthieu@moquet.net>
  */
-final class ArrayAdapter implements AdapterInterface
+class ArrayAdapter implements AdapterInterface
 {
+    /**
+     * @var array<string, int>
+     */
+    private array $domainSet;
+
     /**
      * @param string[] $domains List of throwaway domains
      */
-    public function __construct(private array $domains)
+    public function __construct(array $domains)
     {
+        $this->domainSet = array_flip($domains);
     }
 
     public function isThrowawayDomain(string $domain): bool
     {
-        return in_array($domain, $this->domains, true);
+        return isset($this->domainSet[$domain]);
     }
 }
